@@ -1,0 +1,95 @@
+Title: Gevelreiniging
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Gevelreiniging
+
+----
+
+Intro-description: 
+
+De wijze van gevelreiniging stemmen wij af op het gebruikte gevelmateriaal en de mate van vervuiling. Wij reinigen diverse soorten gevelbeplating in combinatie met ons glasbewassingsysteem. Overige gevels met lichte tot matige vervuiling reinigen wij met onze hogedrukunit tot 300 bar. Afhankelijk van de situatie gebruiken we hierbij koud of warm water of stoom (100°C). In specifieke gevallen vormt chemische reiniging de oplossing.
+
+Uw gevel verdient de beste zorg. Wij bieden u die zorg, met de juiste behandeling voor iedere gevel!
+
+----
+
+Enable-contact: 1
+
+----
+
+Content-description: 
+
+##Voor en na foto’s van gereinigde gevel
+Onderstaand vindt u een aantal voor en na foto’s van gevel die wij hebben gereinigd.
+
+----
+
+Content-text-pre: Gevel voor de gevelreiniging
+
+----
+
+Content-img-pre: gevelreiniging-voor-reiniging.jpg
+
+----
+
+Content-text-after: Gevel voor de gevelreiniging
+
+----
+
+Content-img-after: gevelreiniging-na-reiniging.jpg
+
+----
+
+Content-intro-price: 
+
+### gevel laten reinigen 
+* Professionele schoonmaak
+* Gespecialiseerde kennis
+* Ervaren en betrouwbaar
+* Service & kwaliteit staat voorop
+* Scherpe tarieven
+
+----
+
+Content-price: ## Prijzen gevelreiniging
+
+----
+
+Content-showpriceid: 6
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Gevelreiniging: Uw gevel verdient de beste zorg.
+
+----
+
+Meta-description: Reiniging van Gevel: Uw gevel verdient de beste zorg. Wij bieden u die zorg, met de juiste behandeling voor iedere gevel!
+
+----
+
+Content-video-description: 
+
+----
+
+Content-video-text: 
+
+----
+
+Content-video: 
+
+----
+
+Label: Gevelreiniging
+
+----
+
+Icon: icon-reinigingszuiger.svg

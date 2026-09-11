@@ -1,0 +1,25 @@
+Title: Spijkenisse
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Spijkenisse
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Spijkenisse
+
+----
+
+Meta-description: Spijkenisse

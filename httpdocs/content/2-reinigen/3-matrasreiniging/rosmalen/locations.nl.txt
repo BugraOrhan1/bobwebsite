@@ -1,0 +1,25 @@
+Title: Rosmalen
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Rosmalen
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Rosmalen
+
+----
+
+Meta-description: Rosmalen

@@ -1,0 +1,104 @@
+Title: Auto interieurreiniging
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Auto interieurreiniging
+
+----
+
+Intro-description: Het interieur van uw auto wordt professioneel gereinigd, wij zijn specialist op het gebied van interieurreiniging voor alle typen auto's.  Bij ons bent u ook voor interieur reiniging aan het juiste adres om autobekleding  te reinigen een te ontvetten.
+
+----
+
+Meta: 
+
+----
+
+Meta-label-1: 
+
+----
+
+Meta-title: Wij reinigen op locatie auto interieurreiniging | Vanaf € 69.00
+
+----
+
+Meta-label-2: 
+
+----
+
+Meta-description: Autobekleding reinigen (shamporellen) houdt in dat alle bekleding in uw auto, waaronder de stoelbekleding, deurbekleding, hemelbekleding en vloerbekleding grondig worden gereinigd.
+
+----
+
+Enable-contact: 1
+
+----
+
+Content-description: 
+
+##Voor en na foto’s van gereinigde auto interieur
+Onderstaand vindt u een aantal voor en na foto’s van auto interieur die wij hebben gereinigd.
+
+----
+
+Content-intro-price: 
+
+Een grondige auto-interieurreiniging bestaat uit:
+* Inspecteren vlekken
+* Bekleding ontvetten
+* Autobekleding reinigen
+
+## Autobekleding reinigen
+Schoon warm water, gemengd met een reinigingsmiddel wordt onder hoge druk in de bekleding gespoten en er gelijktijdig weer uitgezogen met een krachtige zuiger.
+
+Ook is het mogelijk om uw auto van een frisse geur te voorzien. Deze geur heeft een lange houdbaarheidsduur van ongeveer x weken. U kunt kiezen uit bijvoorbeeld dennengeur, rozengeur, mentol of "nieuwe auto geur".
+
+Veel mensen kiezen er daarom voor om door ons de ** auto interieurreiniging ** uit te laten voeren. Wilt u daar meer informatie over of wilt u deskundig advies, neem contact met ons op. En ontvang binnen 24 uur een antwoord terug.
+
+----
+
+Content-price: 
+
+----
+
+Content-text-pre: Auto interieur  voor de auto interieurreiniging
+
+----
+
+Content-img-pre: interieurreiniging-voor-reiniging.jpg
+
+----
+
+Content-text-after: Auto interieur voor de auto interieurreiniging
+
+----
+
+Content-img-after: interieurreiniging-na-reiniging.jpg
+
+----
+
+Content-showpriceid: 4
+
+----
+
+Content-video-description: 
+
+----
+
+Content-video-text: 
+
+----
+
+Content-video: 
+
+----
+
+Label: Auto interieurreiniging
+
+----
+
+Icon: icon-auto-reinigen.svg

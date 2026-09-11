@@ -1,0 +1,73 @@
+Title: Tarieven
+
+----
+
+Title-in-menu: 1
+
+----
+
+Hero: 
+
+----
+
+Hero-title: Dit zijn onze tarieven
+
+----
+
+Hero-size: 0
+
+----
+
+Hero-image: 
+
+----
+
+Hero-image-txt: 
+
+----
+
+Prices: 
+
+----
+
+Prices-content: tarieven....
+
+----
+
+Terms: 
+
+----
+
+Terms-title: Voorwaarden
+
+----
+
+Terms-content: 
+
+----
+
+Disclamer-title: Disclamer titel
+
+----
+
+Disclamer-content: Disclamer content
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Onze tarieven - Bankreiniging  aan huis | Vanaf € 49.00
+
+----
+
+Meta-description: Overzicht van de onze prijzen  voor bankreiniging, stoelreiniging, matrasreiniging, auto interieurreiniging, tapijt reiniging, gevelreiniging Zonnepanelen reinigen en Kantoorpanden.
+
+----
+
+Intro-title: Dit zijn onze tarieven
+
+----
+
+Intro-description: Hieronder vindt u een overzicht van onze tarieven. Wij geven hier een vanaf prijsindicatie exclusief voorrijkosten en exclusief btw. Wilt u een prijsopgave voor het reinigen van uw meubels! Neem dan contact met ons op

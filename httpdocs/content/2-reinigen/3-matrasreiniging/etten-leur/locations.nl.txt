@@ -1,0 +1,25 @@
+Title: Etten-Leur
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Etten-Leur
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Etten-Leur
+
+----
+
+Meta-description: Etten-Leur

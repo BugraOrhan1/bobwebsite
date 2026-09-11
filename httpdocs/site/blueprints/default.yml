@@ -1,0 +1,54 @@
+title: Home
+
+options:
+  status: true
+  preview: true
+
+fields:
+
+  title:
+    label: Title home
+    type:  text
+    width: 3/5
+
+  hero:
+    label: Hero
+    type: headline
+  hero_title:
+    label: Title home
+    type:  text
+    width: 1/2
+  hero_size:
+    label: Cover formaat groot
+    type: checkbox
+    text: Wens je een groot formaat
+    width: 1/2
+  hero_image:
+    label: Cover
+    type: image
+    width: 1/2
+  hero_image_txt:
+    label: Cover
+    type: text
+    width: 1/2
+
+  meta:
+    label: Meta
+    type: headline
+  meta_title:
+    label: Meta Title
+    type:  text
+    validate:
+      min: 3
+      max: 80
+    help: Meta Title is the text showed in search engine results. Please enter a text between 50 and 60 characters.
+    width: 1/2
+  meta_description:
+    label: Meta description
+    type:  textarea
+    validate:
+      min: 3
+      max: 200
+    buttons: false
+    help: Meta description is the text showed in search engine results. Please enter a text between 155 and 160 chars.
+    width: 1/2

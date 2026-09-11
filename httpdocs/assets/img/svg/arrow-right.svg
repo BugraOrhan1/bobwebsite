@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="26px" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-0.6%" y="-21.7%" width="101.2%" height="160.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1155.000000, -1439.000000)">
+        <g id="BLOK-quotes" transform="translate(0.000000, 1327.000000)" fill="#000000">
+            <g id="balletjes" transform="translate(21.000000, 106.000000)">
+                <g id="Group-8">
+                    <g id="left-right">
+                        <g id="Group-2" filter="url(#filter-1)" transform="translate(11.000000, 8.000000)">
+                            <g id="0869-chevron-left-circle">
+                                <path d="M11,22.002 C11.256,22.002 11.512,21.904 11.708,21.71 C12.098,21.32 12.098,20.686 11.708,20.296 L2.416,11.004 L11.708,1.712 C12.098,1.322 12.098,0.688 11.708,0.298 C11.318,-0.092 10.684,-0.092 10.292,0.298 L0.294,10.298 C-0.096,10.688 -0.096,11.322 0.294,11.712 L10.292,21.714 C10.49,21.908 10.746,22.004 11.002,22.004 L11,22.002" id="Fill-4"></path>
+                            </g>
+                            <g id="0870-chevron-right-circle" transform="translate(1125.000000, 0.000000)">
+                                <path d="M1.00054169,21.9979999 C0.744531022,21.9979999 0.488520355,21.8999932 0.292512188,21.70598 C-0.0975040627,21.3159534 -0.0975040627,20.6819101 0.292512188,20.2918835 L9.58489937,10.9992499 L0.292512188,1.70661636 C-0.0975040627,1.31658977 -0.0975040627,0.682546537 0.292512188,0.292519945 C0.682528439,-0.0975066482 1.31655486,-0.0975066482 1.70657111,0.292519945 L11.7089879,10.2932018 C12.097004,10.6832284 12.097004,11.3172716 11.7089879,11.7072982 L1.70657111,21.7099802 C1.51056294,21.9039935 1.25455227,22 0.998541606,22 L1.00054169,21.9979999" id="Fill-4"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

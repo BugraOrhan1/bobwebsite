@@ -1,0 +1,25 @@
+Title: Den Helder
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Den Helder
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Den Helder
+
+----
+
+Meta-description: Den Helder

@@ -1,0 +1,94 @@
+Title: Bedankt
+
+----
+
+Intro:
+
+----
+
+Contactoptions:
+
+----
+
+Text:
+
+----
+
+Title-in-menu: 1
+
+----
+
+Hero-title:
+
+----
+
+Hero-size: 0
+
+----
+
+Hero-image:
+
+----
+
+Hero-image-txt:
+
+----
+
+Meta-title: Bedankt voor contact met De Reinigingsdokter
+
+----
+
+Meta-description:
+
+Bedankt voor contact met ons. U verdient een schone omgeving en dat is onze specialiteit.
+Meubelreiniging bankstellen, stoelen, tapijt, autostoelen.
+
+----
+
+Side-title: nee
+
+----
+
+Side-address:
+
+U kunt ons mailen op info@reinigingsdokter.nl of een whatsapp bericht sturen met een foto wat u gereinigd wilt hebben, uw woonplaats en adres gegevens dan nemen wij zo snel mogelijk contact met u op!
+
+Telefonisch kunnen wij geen offerte geven.
+Als u ons een mail stuurt graag een foto van de meubels en de woonplaats vermelden.
+
+----
+
+Side-desc:
+
+----
+
+Intro-title: Neem contact op met De Reinigingsdokter
+
+----
+
+Intro-desc: Wij doen reiniging op locatie door heel Nederland en Belgie.
+
+----
+
+Thank-you-message:
+
+##bedankt voor uw e-mail!
+We nemen zo snel mogelijk contact met u op.
+
+----
+
+Intro-description:
+
+De Reinigingsdokter doet reiniging op locatie door heel Nederland en Belgie.
+
+## Offerte aanvraag
+Telefonisch kunnen wij geen offerte geven maar u kunt ons op de volgende manieren contacten met een foto wat u gereinigd wenst te hebben:
+* Email versturen naar info@reinigingsdokter.nl
+* Whatsapp bericht sturen
+* Contact formulier invullen
+
+Vermeldt ook uw woonplaats en adres gegevens dan nemen wij zo snel mogelijk contact met u op!
+
+----
+
+Form-message: ##Contact formulier

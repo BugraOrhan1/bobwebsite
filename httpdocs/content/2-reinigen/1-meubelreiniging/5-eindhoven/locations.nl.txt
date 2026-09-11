@@ -1,0 +1,17 @@
+Title: Eindhoven
+
+----
+
+Enable-contact: 1
+
+----
+
+Intro-title: Eindhoven
+
+----
+
+Meta-title: Eindhoven
+
+----
+
+Meta-description: Eindhoven

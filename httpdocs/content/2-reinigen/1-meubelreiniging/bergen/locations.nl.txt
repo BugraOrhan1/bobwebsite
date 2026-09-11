@@ -1,0 +1,25 @@
+Title: Bergen
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Bergen
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Bergen
+
+----
+
+Meta-description: Bergen

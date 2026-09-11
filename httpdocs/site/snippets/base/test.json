@@ -1,0 +1,79 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.bank-reinigen.nl/#website",
+      "url": "https://www.bank-reinigen.nl/",
+      "name": "Bank-reinigen.nl",
+      "description": "Goedkoop en snel uw bank laten reinigen!",
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": "https://www.bank-reinigen.nl/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      ],
+      "inLanguage": "nl"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.bank-reinigen.nl/stoffen-bank-reinigen/#primaryimage",
+      "inLanguage": "nl",
+      "url": "https://www.bank-reinigen.nl/wp-content/uploads/2015/09/stoffen-bank-reinigen.jpg"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.bank-reinigen.nl/stoffen-bank-reinigen/#webpage",
+      "url": "https://www.bank-reinigen.nl/stoffen-bank-reinigen/",
+      "name": "Stoffen bank reinigen? Gewoon laten doen, kan al vanaf 67 euro.",
+      "isPartOf": {
+        "@id": "https://www.bank-reinigen.nl/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.bank-reinigen.nl/stoffen-bank-reinigen/#primaryimage"
+      },
+      "datePublished": "2015-09-14T01:07:10+00:00",
+      "dateModified": "2016-11-07T08:08:14+00:00",
+      "description": "Stoffen bank reinigen? Waarom zelf doen. Wij reinigen uw bank al vanaf 67 euro. Tijdelijke aanbieding dus maak vandaag nog een afspraak met ons.",
+      "breadcrumb": {
+        "@id": "https://www.bank-reinigen.nl/stoffen-bank-reinigen/#breadcrumb"
+      },
+      "inLanguage": "nl",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.bank-reinigen.nl/stoffen-bank-reinigen/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.bank-reinigen.nl/stoffen-bank-reinigen/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebPage",
+            "@id": "https://www.bank-reinigen.nl/",
+            "url": "https://www.bank-reinigen.nl/",
+            "name": "Home"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WebPage",
+            "@id": "https://www.bank-reinigen.nl/stoffen-bank-reinigen/",
+            "url": "https://www.bank-reinigen.nl/stoffen-bank-reinigen/",
+            "name": "Stoffen bank reinigen"
+          }
+        }
+      ]
+    }
+  ]
+}

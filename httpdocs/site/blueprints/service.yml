@@ -1,0 +1,148 @@
+title: Dienst
+
+options:
+  template: false
+  status: true
+  preview: true
+  url: true
+  delete: true
+
+pages:
+  template: locations
+
+files: true
+  sortable: true
+  fields:
+    author:
+      label: Author
+      type: text
+      translate: false
+    copyright:
+      label: Copyright
+      type: text
+      translate: false
+    caption:
+      label: Caption
+      type: text
+      translate: false
+
+fields:
+  title:
+    label: Title
+    type:  text
+    width: 3/5
+    validate:
+      min: 3
+      max: 100
+  label:
+    label: label categorie
+    type:  text
+    width: 2/5
+  icon:
+    label: categorie icon svg
+    type:  image
+    width: 2/5
+
+  hr-1:
+    label: Artikel
+    type: headline
+  intro_title:
+    label: Titel
+    type:  text
+    buttons: false
+    width: 3/5
+  intro_description:
+    label: Volledig omschrijving
+    type:  textarea
+    width: 4/5
+
+  enable_contact:
+    label: Wil je contact block aan zetten?
+    type:  checkbox
+    text: Wil je contact block aan zetten?
+    width: 4/5
+
+  content_description:
+    label: Inleidende content gereinigde foto
+    type:  textarea
+    width: 5/5
+
+  content_text_pre:
+    label: pre text
+    type:  text
+    width: 2/5
+  content_img_pre:
+    label: Image voor
+    type:  image
+    width: 3/5
+  content_text_after:
+    label: after text
+    type:  text
+    width: 2/5
+  content_img_after:
+    label: Image na
+    type:  image
+    width: 3/5
+  hr-2:
+    label: video
+    type: headline
+  content_video_description:
+    label: Inleidende content gereinigde video
+    type:  textarea
+    width: 5/5
+  content_video_text:
+    label: video text
+    type:  text
+    width: 2/5
+  content_video:
+    label: Video
+    type: select
+    options: videos
+    width: 3/5
+
+  hr-3:
+    label: prijzen
+    type: headline
+  content_intro_price:
+    label: Inleidende plus punten van deze dienst
+    type:  textarea
+    width: 5/5
+  content_price:
+    label: Volledig prijzen
+    type:  textarea
+    width: 5/5
+  content_showpriceID:
+    label: prijzen ids
+    type: checkboxes
+    options:
+      1: Bankreiniging
+      2: Stoelreiniging
+      3: Matrasreiniging
+      4: Auto-interieurreiniging
+      5: Tapijtreiniging
+      6: Gevelreiniging
+      7: Zonnepanelenreinigen
+      8: Kantoorpanden
+      9: COVID-19 hygiene reiniging
+
+
+  meta:
+    label: Meta
+    type: headline
+  meta_title:
+    label: Meta Title
+    type:  text
+    validate:
+      min: 3
+      max: 120
+    help: Meta Title is the text showed in search engine results. Please enter a text between 50 and 60 characters.
+    width: 1/2
+  meta_description:
+    label: Meta description
+    type:  textarea
+    validate:
+      min: 3
+      max: 360
+    buttons: false
+    help: Meta description is the text showed in search engine results. Please enter a text between 155 and 160 chars.
+    width: 1/2

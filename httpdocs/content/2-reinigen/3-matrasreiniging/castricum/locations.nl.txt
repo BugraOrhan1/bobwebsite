@@ -1,0 +1,25 @@
+Title: Castricum
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Castricum
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Castricum
+
+----
+
+Meta-description: Castricum

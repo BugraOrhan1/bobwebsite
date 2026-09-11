@@ -1,0 +1,104 @@
+Title: Bankreiniging
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Wij doen bankreinigen
+
+----
+
+Intro-description: 
+
+Door regelmatig uw bank stof te zuigen verwijderd u hiermee stof, huidschilfers, brood, koekkruimels en ander los vuil. Maar heeft u wel eens zwarte randen gezien op de plekken waar het hoofd tegen aankomt? Of op de plekken waar u vaak met uw handen komt? Dat zijn ophopingen van bacteriën die helemaal in de bekleding van uw stoffen bank getrokken zijn. Naast deze vuiligheid kunt u bijvoorbeeld ook last hebben van geurtjes. Denk bijvoorbeeld maar aan sigaretten rook. Als u dit wil verwijderen dan is uw bankstel reinigen noodzakelijk. 
+
+Wij als professionels kan al deze bacteriën, vlekken en geurtjes weer uit uw bankstel reinigen zodat deze er weer schoon is en fris ruikt!
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Bankreiniging aan huis zodat het schoon is  vanaf € 49
+
+----
+
+Meta-description: Bankreiniging kan al deze bacteriën, vlekken en geurtjes weer uit uw bankstel reinigen zodat deze er weer schoon is en fris ruikt.
+
+----
+
+Enable-contact: 1
+
+----
+
+Content-description: 
+
+##Voor en na foto’s van gereinigde bank
+Onderstaand vindt u een aantal voor en na foto’s van bank die wij hebben gereinigd.
+
+----
+
+Content-intro-price: 
+
+### Bank laten reinigen heeft zijn voordelen
+* Uw bank ziet er weer schoon en fris uit
+* Door jaarlijkse intensieve reiniging uit te voeren verlengt u de levensduur van uw bank.
+* Na het impregneren zijn kleine vlekken op uw stoffen bank makkelijker schoon te krijgen.
+* Door intensieve reiniging voorkomt u dat vervuiling de kleur van uw bekleding aantast.
+* Uw stoffen bank reinigen is duurzaam en zal op langer termijn geld besparen!
+
+Veel mensen kiezen er daarom voor om door ons de **meubelreiniging** uit te laten voeren. Wilt u daar meer informatie over of wilt u deskundig advies, neem contact met ons op. En ontvang binnen 24 uur een antwoord terug!
+
+----
+
+Content-price: 
+
+###Impregneren per zitting
+Om ervoor te zorgen dat uw stoffen meubel lang mooi én schoon blijft, kunnen wij het meubel impregneren.
+Tijdens het impregneren brengen wij een vuilafstotende coating aan die ervoor zorgt dat vuil minder goed hecht. Tevens kunt u vlekken makkelijker verwijderen, wanneer uw meubel is voorzien van een vuilafstotende coating.
+##Prijzen bankreiniging
+De kosten van bankreiniging zijn geheel afhankelijk van de conditie van uw bank. Om u toch een indicatie van de kosten te geven, vindt u onderstaand een overzicht:
+De prijzen zijn gebaseerd op **inclusief kussens** en is een vanaf prijs
+
+----
+
+Content-text-pre: Bankstel voor de bankreiniging
+
+----
+
+Content-img-pre: bankreinigen-voor-reiniging.jpg
+
+----
+
+Content-text-after: Bankstel na de bankreiniging
+
+----
+
+Content-img-after: bankreinigen-na-reiniging.jpg
+
+----
+
+Content-showpriceid: 1, 2
+
+----
+
+Label: Bankreiniging
+
+----
+
+Content-video-description: 
+
+----
+
+Content-video-text: 
+
+----
+
+Content-video: 
+
+----
+
+Icon: icon-reinigingszuiger.svg

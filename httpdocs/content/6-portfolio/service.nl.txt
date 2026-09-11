@@ -1,0 +1,101 @@
+Title: Portfolio
+
+----
+
+Label: 
+
+----
+
+Icon: 
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Portfolio van onze werkzaamheden
+
+----
+
+Intro-description: 
+
+Benieuwd naar het resultaat van onze werkzaamheden? In ons portfolio vindt u een selectie van banken, stoelen en andere interieuronderdelen die wij professioneel hebben gereinigd.
+
+Van hardnekkige vlekken en vuil tot een grondige opfrisbeurt van uw interieur: wij zorgen ervoor dat uw meubels er weer schoon, fris en verzorgd uitzien.
+
+Bekijk hieronder de voor- en nafoto’s en ontdek zelf het verschil dat een professionele reiniging kan maken.
+
+----
+
+Enable-contact: 0
+
+----
+
+Content-description: 
+
+Benieuwd naar het resultaat van onze werkzaamheden? In ons portfolio vindt u een selectie van banken, stoelen en andere interieuronderdelen die wij professioneel hebben gereinigd.
+
+Van hardnekkige vlekken en vuil tot een grondige opfrisbeurt van uw interieur: wij zorgen ervoor dat uw meubels er weer schoon, fris en verzorgd uitzien.
+
+Bekijk hieronder de voor- en nafoto’s en ontdek zelf het verschil dat een professionele reiniging kan maken.
+
+----
+
+Content-text-pre: 1
+
+----
+
+Content-img-pre: v1.png
+
+----
+
+Content-text-after: 2
+
+----
+
+Content-img-after: v3.png
+
+----
+
+Hr-2: 
+
+----
+
+Content-video-description: 
+
+----
+
+Content-video-text: 
+
+----
+
+Content-video: 
+
+----
+
+Hr-3: 
+
+----
+
+Content-intro-price: 
+
+----
+
+Content-price: 
+
+----
+
+Content-showpriceid: 
+
+----
+
+Meta: 
+
+----
+
+Meta-title: 
+
+----
+
+Meta-description: 
