@@ -311,3 +311,17 @@ gedaan. Het eerlijke alternatief staat er nu: de review-knop + uw echte score. W
 een andere score tonen die elders écht behaald is (bijv. Google), dan kan dat in het
 admin-paneel onder **⚙️ Instellingen** (veld review-score) — vul daar alleen echte
 cijfers in.
+
+## 12. Crawler-check + opruiming
+
+- **robots.txt** staat goed: `Allow: /` + sitemap-verwijzing; alleen /admin, /data en
+  /app zijn verboden (bewust, vanwege privacy/security).
+- **sitemap.xml** bereikbaar met alle dienst- en stadspagina's.
+- **Spook-URL opgeruimd**: een oude data-fout leverde stadspagina "/reinigen/…/s"
+  op (naam "%s") — verwijderd uit de database; sitemap nu schoon.
+- **Let op live**: bestand `eenmalig-opruimen.php` na het uploaden één keer aanroepen
+  (verwijdert de spookstad uit de live-database en zichzelf daarna).
+- **Waarschijnlijke oorzaak "crawler geweigerd"**: de beveiliging van de hosting
+  (Imunify360) blokkeert tijdelijk IP's die zeer snel zeer veel pagina's opvragen —
+  bij ~10.000 stadspagina's gebeurt dat snel. Oplossing: crawler langzamer laten
+  lopen of het IP van de crawler door mijndomein laten whitelisten.
