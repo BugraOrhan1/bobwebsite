@@ -406,6 +406,49 @@ if ($route === '/reviews/edit') {
 }
 
 /* ------------------------------------------------------------------ */
+/* FAQ's                                                               */
+/* ------------------------------------------------------------------ */
+
+if ($route === '/faq') {
+    $pdo = db();
+    if ($method === 'POST' && csrf_check()) {
+        $action = $_POST['action'] ?? '';
+        if ($action === 'delete') $pdo->prepare('DELETE FROM faqs WHERE id = ?')->execute([(int)$_POST['id']]);
+        if ($action === 'toggle') $pdo->prepare('UPDATE faqs SET active = 1 - active WHERE id = ?')->execute([(int)$_POST['id']]);
+        redirect('/admin/faq');
+    }
+    $faqs = $pdo->query('SELECT * FROM faqs ORDER BY sort ASC, id ASC')->fetchAll();
+    admin_view('faqs_list', ['faqs' => $faqs]);
+    exit;
+}
+
+if ($route === '/faq/edit') {
+    $pdo = db();
+    $id = (int)($_GET['id'] ?? 0);
+    $faq = ['id' => 0, 'question' => '', 'answer' => '', 'active' => 1];
+    if ($id > 0) {
+        $st = $pdo->prepare('SELECT * FROM faqs WHERE id = ?');
+        $st->execute([$id]);
+        $found = $st->fetch();
+        if (!$found) { flash_set('FAQ niet gevonden.', 'err'); redirect('/admin/faq'); }
+        $faq = $found;
+    }
+    if ($method === 'POST' && csrf_check()) {
+        $data = [trim($_POST['question'] ?? ''), trim($_POST['answer'] ?? ''), isset($_POST['active']) ? 1 : 0];
+        if ($id > 0) {
+            $pdo->prepare('UPDATE faqs SET question = ?, answer = ?, active = ? WHERE id = ?')
+                ->execute(array_merge($data, [$id]));
+        } else {
+            $pdo->prepare('INSERT INTO faqs (question, answer, active, sort) VALUES (?,?,?,99)')->execute($data);
+        }
+        flash_set('FAQ opgeslagen.');
+        redirect('/admin/faq');
+    }
+    admin_view('faqs_edit', ['faq' => $faq]);
+    exit;
+}
+
+/* ------------------------------------------------------------------ */
 /* Instellingen                                                        */
 /* ------------------------------------------------------------------ */
 
@@ -415,7 +458,7 @@ if ($route === '/instellingen') {
             'whatsapp_float','notify_email','contact_email','address_street','address_zip','address_city',
             'address_region','facebook','instagram','analytics_id','ads_id','ads_conversion_form',
             'ads_conversion_whatsapp','base_url','footer_sitemap_desc','footer_contact_title',
-            'footer_sitemap_title','review_badge_title','review_badge_sub','review_badge_nr'];
+            'footer_sitemap_title','review_badge_title','review_badge_sub','review_badge_nr','kvk_number'];
         foreach ($keys as $k) {
             if (array_key_exists($k, $_POST)) setting_save($k, trim((string)$_POST[$k]));
         }

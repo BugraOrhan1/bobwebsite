@@ -20,6 +20,12 @@
   </div>
 </section>
 
+<section class="lane usp-lane" style="padding-top:26px">
+    <div class="container-fluid">
+        <?php view('usp_row'); ?>
+    </div>
+</section>
+
 <section class="lane lane-service">
     <div class="container-fluid">
 
@@ -67,6 +73,16 @@
         </div>
         <div class="f-03">
             <h2 class="plus-intro">Onze voorbeelden</h2>
+
+            <?php if (file_exists(MEDIA_DIR . '/reinigen/bankreinigen-voor-reiniging.jpg') && file_exists(MEDIA_DIR . '/reinigen/bankreinigen-na-reiniging.jpg')): ?>
+                <?php view('ba_slider', [
+                    'before' => '/media/reinigen/bankreinigen-voor-reiniging.jpg',
+                    'after' => '/media/reinigen/bankreinigen-na-reiniging.jpg',
+                    'altBefore' => 'Bankstel voor de bankreiniging',
+                    'altAfter' => 'Bankstel na de bankreiniging',
+                ]); ?>
+            <?php endif; ?>
+
             <?php
             $photos = [];
             foreach (preg_split('/\s*\n\s*/', trim((string)($page['plus_photos'] ?? ''))) as $line) {
@@ -125,3 +141,5 @@ $secondTwo = array_slice($reviews, $half, 2);
 
   </section>
 <?php endif; ?>
+
+<?php view('faq_block'); ?>

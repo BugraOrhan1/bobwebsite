@@ -133,6 +133,7 @@ if ($page) {
         'contact' => 'contact',
         'thanks' => 'thanks',
         'page' => 'page',
+        'legal' => 'legal',
     ];
     $view = $viewMap[$page['template']] ?? 'page';
     $bodyClass = $page['template'] === 'contact' ? 'body__contact'

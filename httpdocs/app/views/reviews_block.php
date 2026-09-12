@@ -27,6 +27,7 @@ $started = false;
 
             <li class="review__item">
                 <blockquote class="review__block">
+                    <p class="review__stars" aria-label="Beoordeling: 5 sterren"></p>
                     <div class="review__service"><p class="review__categorie"><?= h($_review['service']) ?></p></div>
                     <p class="review__name">
                         <?= h($_review['name']) ?> <span class="review__<?= h($_review['country'] ?: 'nl') ?>"></span>

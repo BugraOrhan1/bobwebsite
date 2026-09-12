@@ -14,6 +14,7 @@
 </div>
 <?php view('whatsapp_float'); ?>
 <?php view('mobile_bar'); ?>
+<?php view('cookie_banner'); ?>
 <?php view('scripts', ['ctx' => $ctx]); ?>
 </body>
 </html>

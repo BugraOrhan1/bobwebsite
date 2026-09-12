@@ -75,6 +75,16 @@ function menu_pages(): array
     return $out;
 }
 
+/** Los een mediapad op: eerst in de dienstmap, dan in de algemene reinigen-map */
+function media_path_of(?string $file, string $mediaBase): ?string
+{
+    if (!$file) return null;
+    foreach ([$mediaBase, 'reinigen'] as $dir) {
+        if (file_exists(MEDIA_DIR . '/' . $dir . '/' . $file)) return '/media/' . $dir . '/' . $file;
+    }
+    return null;
+}
+
 /** Aantal stadspagina's (voor dashboard/sitemap) */
 function city_page_count(): int
 {

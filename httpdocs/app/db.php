@@ -101,6 +101,13 @@ function db_migrate(PDO $pdo): void
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         ip TEXT, created_at INTEGER
     );
+    CREATE TABLE IF NOT EXISTS faqs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        question TEXT NOT NULL,
+        answer TEXT,
+        active INTEGER DEFAULT 1,
+        sort INTEGER DEFAULT 0
+    );
     ");
 }
 

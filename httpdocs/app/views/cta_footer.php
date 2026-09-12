@@ -46,7 +46,13 @@
       </div>
 
       <div class="f-item">
-
+        <div class="footer_legal">
+            <a href="/privacy">Privacyverklaring</a>
+            <a href="/cookies">Cookies</a>
+            <?php if (setting('kvk_number')): ?>
+                <span>KvK: <?= h(setting('kvk_number')) ?></span>
+            <?php endif; ?>
+        </div>
       </div>
 
     </div>

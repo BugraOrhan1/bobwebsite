@@ -16,6 +16,8 @@
         <input type="text" name="slogan" value="<?= h($settings['slogan'] ?? '') ?>">
         <label>Adres</label>
         <input type="text" name="address_street" value="<?= h($settings['address_street'] ?? '') ?>">
+        <label>KvK-nummer <small>(verplicht te vermelden op een zakelijke website; verschijnt in de footer + privacyverklaring)</small></label>
+        <input type="text" name="kvk_number" value="<?= h($settings['kvk_number'] ?? '') ?>" placeholder="bijv. 12345678">
         <div class="admin-row">
             <div><label>Postcode</label><input type="text" name="address_zip" value="<?= h($settings['address_zip'] ?? '') ?>"></div>
             <div><label>Plaats</label><input type="text" name="address_city" value="<?= h($settings['address_city'] ?? '') ?>"></div>

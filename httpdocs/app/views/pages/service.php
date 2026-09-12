@@ -39,43 +39,23 @@ $mediaBase = 'reinigen/' . $service['slug'];
                     <?php if ($examples): ?>
                         <div class="example">
                             <?php foreach ($examples as $ex): ?>
-                                <div class="f-row">
-                                    <div class="f-col">
-                                        <h2 class="example__title"><?= h($ex['content_text_pre'] ?? '') ?></h2>
-                                        <?php if (!empty($ex['content_img_pre']) && file_exists(MEDIA_DIR . '/' . $mediaBase . '/' . $ex['content_img_pre'])): ?>
-                                            <p class="example__desc"><img class="example__img" loading="lazy" alt="<?= h($ex['content_text_pre'] ?? '') ?>" src="/media/<?= h($mediaBase) ?>/<?= h($ex['content_img_pre']) ?>"></p>
-                                        <?php elseif (!empty($ex['content_img_pre']) && file_exists(MEDIA_DIR . '/reinigen/' . $ex['content_img_pre'])): ?>
-                                            <p class="example__desc"><img class="example__img" loading="lazy" alt="<?= h($ex['content_text_pre'] ?? '') ?>" src="/media/reinigen/<?= h($ex['content_img_pre']) ?>"></p>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="f-col">
-                                        <h2 class="example__title"><?= h($ex['content_text_after'] ?? '') ?></h2>
-                                        <?php if (!empty($ex['content_img_after']) && file_exists(MEDIA_DIR . '/' . $mediaBase . '/' . $ex['content_img_after'])): ?>
-                                            <p class="example__desc"><img class="example__img" loading="lazy" alt="<?= h($ex['content_text_after'] ?? '') ?>" src="/media/<?= h($mediaBase) ?>/<?= h($ex['content_img_after']) ?>"></p>
-                                        <?php elseif (!empty($ex['content_img_after']) && file_exists(MEDIA_DIR . '/reinigen/' . $ex['content_img_after'])): ?>
-                                            <p class="example__desc"><img class="example__img" loading="lazy" alt="<?= h($ex['content_text_after'] ?? '') ?>" src="/media/reinigen/<?= h($ex['content_img_after']) ?>"></p>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
+                                <?php
+                                $preImg = media_path_of($ex['content_img_pre'] ?? null, $mediaBase);
+                                $afterImg = media_path_of($ex['content_img_after'] ?? null, $mediaBase);
+                                if ($preImg && $afterImg):
+                                    view('ba_slider', ['before' => $preImg, 'after' => $afterImg,
+                                        'altBefore' => $ex['content_text_pre'] ?? '', 'altAfter' => $ex['content_text_after'] ?? '']);
+                                endif; ?>
                             <?php endforeach; ?>
                         </div>
                     <?php elseif (!empty($page['content_text_pre']) && $page['content_text_pre'] !== ''): ?>
-                        <div class="example">
-                            <div class="f-row">
-                                <div class="f-col">
-                                    <h2 class="example__title"><?= h($page['content_text_pre']) ?></h2>
-                                    <?php if (!empty($page['content_img_pre']) && file_exists(MEDIA_DIR . '/' . $mediaBase . '/' . $page['content_img_pre'])): ?>
-                                        <p class="example__desc"><img class="example__img" loading="lazy" alt="<?= h($page['content_text_pre']) ?>" src="/media/<?= h($mediaBase) ?>/<?= h($page['content_img_pre']) ?>"></p>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="f-col">
-                                    <h2 class="example__title"><?= h($page['content_text_after'] ?? '') ?></h2>
-                                    <?php if (!empty($page['content_img_after']) && file_exists(MEDIA_DIR . '/' . $mediaBase . '/' . $page['content_img_after'])): ?>
-                                        <p class="example__desc"><img class="example__img" loading="lazy" alt="<?= h($page['content_text_after'] ?? '') ?>" src="/media/<?= h($mediaBase) ?>/<?= h($page['content_img_after']) ?>"></p>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        $preImg = media_path_of($page['content_img_pre'] ?? null, $mediaBase);
+                        $afterImg = media_path_of($page['content_img_after'] ?? null, $mediaBase);
+                        if ($preImg && $afterImg):
+                            view('ba_slider', ['before' => $preImg, 'after' => $afterImg,
+                                'altBefore' => $page['content_text_pre'], 'altAfter' => $page['content_text_after'] ?? '']);
+                        endif; ?>
                     <?php endif; ?>
 
                     <?php

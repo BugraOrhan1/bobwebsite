@@ -151,3 +151,34 @@ httpdocs/
       als je dat domein houdt, zodat je bestaande Google-posities meeverhuizen.
 - [ ] Oude SMTP-wachtwoorden die in de Kirby-config stonden zijn **niet** overgenomen en
       horen niet in code — draai voor de zekerheid dat e-mailwachtwoord om.
+
+---
+
+## 6. UPDATE v2 — Modernisering (na overleg)
+
+De structuur en herkenbaarheid zijn hetzelfde gebleven, maar het uiterlijk is opgepoetst
+en er ontbrak belangrijke (deels wettelijk verplichte) informatie. Wat er is toegevoegd:
+
+### Design
+- **Modern lettertype (Inter)** in plaats van kale Helvetica, met strakkere koppen.
+- **Hero met echte foto** + donkerblauwe overlay en witte tekst — de site oogt nu direct professioneel.
+- **Interactieve voor/na-slider** (sleep om het verschil te zien) op de home en op alle
+  dienst- en stadspagina's — hét verkoopargument van een reinigingsbedrijf.
+- **Review-sterren (★★★★★)** bij elke beoordeling voor directe vertrouwensweergave.
+- **USP-rij met iconen** onder de hero (aan huis, milieuvriendelijk, reactie binnen 2 uur, eerlijk advies).
+- **Modernere knoppen** met ronde hoeken, schaduw en hover-effect.
+
+### Ontbrekende informatie toegevoegd
+- **Privacyverklaring** (`/privacy`) — wettelijk verplicht (AVG) bij formulier + analytics.
+- **Cookiebeleid** (`/cookies`) + **cookie-toestemmingsbalk**: Google Analytics/Ads wordt
+  alléén geladen nadat de bezoeker akkoord gaat (AVG-proof).
+- **KvK-nummer** instelbaar via Instellingen → verschijnt in footer én privacyverklaring.
+- **FAQ-sectie** op de home (8 standaardvragen, bewerkbaar via **❓ FAQ's** in het admin-paneel),
+  inclusief **FAQPage-schema** voor Google rich results (uitklapbare vragen in zoekresultaten).
+
+### Beheer
+- Nieuw admin-onderdeel **❓ FAQ's**: vragen toevoegen, bewerken, verbergen, verwijderen.
+- Instellingen: veld **KvK-nummer** toegevoegd.
+
+*Testen: zie TESTEN.md. In de preview zie je onderaan de cookie-melding; na "Accepteren"
+wordt Google Analytics pas actief.*

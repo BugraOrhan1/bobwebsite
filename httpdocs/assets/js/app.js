@@ -59,3 +59,54 @@
         }
     } catch (e) { /* stil falen */ }
 })();
+
+/* ---- v2: voor/na-slider ---- */
+(function () {
+    'use strict';
+    function setPos(slider, pct) {
+        pct = Math.max(0, Math.min(100, pct));
+        var after = slider.querySelector('.ba-slider__after');
+        var divider = slider.querySelector('.ba-slider__divider');
+        var handle = slider.querySelector('.ba-slider__handle');
+        if (after) after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+        if (divider) divider.style.left = pct + '%';
+        if (handle) handle.style.left = pct + '%';
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.ba-slider').forEach(function (slider) {
+            var range = slider.querySelector('.ba-slider__range');
+            if (!range) return;
+            range.addEventListener('input', function () { setPos(slider, +range.value); });
+            setPos(slider, 50);
+        });
+    });
+})();
+
+/* ---- v2: cookie-toestemming ---- */
+(function () {
+    'use strict';
+    function getCookie(name) {
+        var m = document.cookie.match(new RegExp('(?:^|;\\s*)' + name + '=([^;]+)'));
+        return m ? decodeURIComponent(m[1]) : null;
+    }
+    function setCookie(name, value, days) {
+        var d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = name + '=' + encodeURIComponent(value) +
+            ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var bar = document.getElementById('cookie-bar');
+        if (!bar) return;
+        if (getCookie('rd_consent') !== null) { bar.remove(); return; }
+        bar.style.display = 'flex';
+        bar.querySelector('.cookie-bar__accept')?.addEventListener('click', function () {
+            setCookie('rd_consent', 'yes', 180);
+            window.location.reload();
+        });
+        bar.querySelector('.cookie-bar__decline')?.addEventListener('click', function () {
+            setCookie('rd_consent', 'no', 30);
+            bar.remove();
+        });
+    });
+})();

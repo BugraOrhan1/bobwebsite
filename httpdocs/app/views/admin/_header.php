@@ -24,6 +24,7 @@
                 '/admin/steden' => ['📍', "Stadspagina's"],
                 '/admin/prijzen' => ['💶', 'Prijzen'],
                 '/admin/reviews' => ['⭐', 'Reviews'],
+                '/admin/faq' => ['❓', "FAQ's"],
                 '/admin/media' => ['🖼️', 'Media'],
                 '/admin/instellingen' => ['⚙️', 'Instellingen'],
                 '/admin/account' => ['🔑', 'Mijn account'],

@@ -89,6 +89,27 @@ $ratingCount = count($reviews);
     ]
     }
     <?php endif; ?>
+    <?php
+    $schemaFaqs = db()->query('SELECT question, answer FROM faqs WHERE active = 1 ORDER BY sort ASC, id ASC')->fetchAll();
+    ?>
+    <?php if ($schemaFaqs && in_array($ctx['pageView'], ['home', 'service', 'city'], true)): ?>,
+    {
+    "@type": "FAQPage",
+    "@id": "<?= h($canonical) ?>#faq",
+    "mainEntity": [
+        <?php foreach ($schemaFaqs as $i => $sf): ?>
+        {
+            "@type": "Question",
+            "name": "<?= h($sf['question']) ?>",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<?= h(strip_tags($sf['answer'])) ?>"
+            }
+        }<?= $i < count($schemaFaqs) - 1 ? ',' : '' ?>
+        <?php endforeach; ?>
+    ]
+    }
+    <?php endif; ?>
 ]
 }
 </script>
