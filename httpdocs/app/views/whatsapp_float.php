@@ -14,4 +14,11 @@ if (setting('whatsapp_float', '1') !== '1') return;
         </svg>
     </span>
     <span class="wa-float__label">WhatsApp ons</span>
+    <span class="wa-float__note" aria-hidden="true">
+        <em>Gratis offerte<br>aanvragen</em>
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 2 C14 10 14 20 20 32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M13 26 L20 35 L27 26" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </span>
 </a>

@@ -550,3 +550,55 @@ footer .f-item {
 .footer_legal span { white-space: nowrap; }
 @media (max-width: 900px) { footer .f-main { grid-template-columns: 1fr 1fr; gap: 28px; } }
 @media (max-width: 600px) { footer .f-main { grid-template-columns: 1fr; } }
+
+/* ---------- Polish v7 ---------- */
+/* "Gratis offerte aanvragen"-sticker met pijltje bij de WhatsApp-knop (elke pagina) */
+.wa-float__note {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    right: -4px;
+    width: 96px;
+    color: #002970;
+    text-align: center;
+    pointer-events: none;
+    animation: wa-note-bob 2.4s ease-in-out infinite;
+}
+.wa-float__note em {
+    display: block;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12.5px;
+    line-height: 1.2;
+    transform: rotate(-6deg);
+    background: #F5C457;
+    color: #10357a;
+    border-radius: 10px;
+    padding: 6px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+}
+.wa-float__note svg { width: 30px; height: 30px; margin: 2px 0 0 auto; display: block; }
+@keyframes wa-note-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+@media (max-width: 760px) {
+    .wa-float__note { right: -6px; width: 88px; }
+    .wa-float__note em { font-size: 11.5px; }
+}
+
+/* Footer: merkkleur i.p.v. zwart-grijs + nette marges (niets meer afgesneden) */
+footer { background: linear-gradient(180deg, #0a2a66 0%, #071e4a 100%) !important; padding: 44px 0 28px !important; }
+footer .container-fluid { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+footer .f-item p, footer .footer_html p { max-width: 420px; }
+.footer_html a, .footer_html p, footer address { color: #dbe6fb !important; }
+footer a { color: #c3e9f3; }
+
+/* Review-CTA (echte beoordelingen verzamelen) */
+.review-cta { text-align: center; margin-top: 22px; }
+.review-cta a {
+    display: inline-block; padding: 12px 22px; border-radius: 999px;
+    background: #fff; color: #10357a !important; font-weight: 700; font-size: 14.5px;
+    text-decoration: none; box-shadow: 0 6px 18px rgba(20, 30, 60, .12);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.review-cta a:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(20, 30, 60, .18); }

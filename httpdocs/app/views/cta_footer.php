@@ -29,8 +29,7 @@
                 <img src="/assets/logo/Gemini_Generated_Image_e5gvwve5gvwve5gv-removebg-preview.png" alt="Logo De Reinigingsdokter">
                 <div>
                     <strong>De Reinigingsdokter</strong>
-                    <a href="<?= h(setting('facebook')) ?>" target="_blank" rel="noopener">Facebook →</a><br>
-                    <a href="<?= h(setting('instagram')) ?>" target="_blank" rel="noopener">Instagram →</a>
+                    <a href="<?= h(setting('facebook')) ?>" target="_blank" rel="noopener">Facebook →</a>
                 </div>
             </div>
         </div>

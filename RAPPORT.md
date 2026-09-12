@@ -293,3 +293,21 @@ stadspagina's, portfolio, tarieven, reviews, contact, privacy, cookies, 404 en a
 
 LET OP voor live: na elke update moeten de bestanden opnieuw naar de hosting
 (worden hieronder bij "Live zetten" uitgelegd) — anders blijft de oude versie staan.
+
+## 11. UPDATE v7 — Offerte-sticker, footer-kleur, Instagram weg
+
+- **"Gratis offerte aanvragen"-sticker** met handgetekend pijltje bij de zwevende
+  WhatsApp-knop — zichtbaar op élke pagina, ook op mobiel, met zachte beweeg-animatie.
+- **Footer** niet meer zwart-grijs maar rustig donkerblauw in merkkleur, met nette
+  marges zodat er niets meer wordt afgesneden.
+- **Instagram-link verwijderd** uit de footer (op verzoek); Facebook blijft staan.
+- **Review-knop op de home**: "⭐ Klant geweest? Laat ook een beoordeling achter" —
+  hiermee groeit het aantal échte reviews organisch.
+
+### Waarom geen 1000 nePREviews
+Nep-reviews zijn misleidend voor klanten, in strijd met de ACM-regels en met het
+beleid van Google (risico: schorsing van Ads en bedrijfsprofiel). Daarom bewust niet
+gedaan. Het eerlijke alternatief staat er nu: de review-knop + uw echte score. Wilt u
+een andere score tonen die elders écht behaald is (bijv. Google), dan kan dat in het
+admin-paneel onder **⚙️ Instellingen** (veld review-score) — vul daar alleen echte
+cijfers in.
