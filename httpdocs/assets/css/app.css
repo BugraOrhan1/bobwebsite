@@ -8,10 +8,11 @@
 .wa-float {
     position: fixed;
     right: 18px;
-    bottom: 96px;
+    bottom: 26px;
     z-index: 9990;
     display: flex;
     align-items: center;
+    flex-direction: row-reverse; /* label links van de bol, bol strak rechts */
     gap: 10px;
     text-decoration: none;
 }
@@ -27,11 +28,13 @@
     transition: transform .15s ease;
     position: relative;
     z-index: 2;
+    flex: none;
 }
 .wa-float:hover .wa-float__icon { transform: scale(1.07); }
 .wa-float__pulse {
     position: absolute;
     right: 0;
+    bottom: 0;
     width: 58px;
     height: 58px;
     border-radius: 50%;
@@ -63,7 +66,7 @@
 .wa-float:focus .wa-float__label { opacity: 1; transform: translateX(0); }
 
 @media (max-width: 760px) {
-    .wa-float { right: 12px; bottom: 76px; }
+    .wa-float { right: 12px; bottom: 70px; } /* net boven de mobiele bel/WhatsApp-balk */
     .wa-float__icon { width: 52px; height: 52px; }
     .wa-float__pulse { width: 52px; height: 52px; }
     .wa-float__icon svg { width: 26px; height: 26px; }
@@ -352,3 +355,56 @@ h1, h2, h3, .lane__title, .hero-02__title, .plus-intro, .box-cta__title {
 .legal-page { max-width: 780px; margin: 0 auto; }
 .legal-page h2 { margin-top: 26px; }
 .legal-page p, .legal-page li { font-size: 14.5px; line-height: 1.7; }
+
+/* ---------- Portfolio v3 ---------- */
+.portfolio-intro { max-width: 860px; margin: 0 auto 26px; text-align: center; padding-top: 24px; }
+.portfolio-intro .lane__title { margin-bottom: 12px; }
+.portfolio-intro .cont-html { color: #33405c; font-size: 16px; line-height: 1.7; }
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 22px;
+    margin-bottom: 34px;
+}
+.portfolio-card {
+    margin: 0; background: #fff; border-radius: 16px; overflow: hidden;
+    box-shadow: 0 4px 18px rgba(20,30,60,.10);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(20,30,60,.16); }
+.portfolio-card__pair { display: grid; grid-template-columns: 1fr 1fr; }
+.portfolio-card__img { position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
+.portfolio-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portfolio-card__label {
+    position: absolute; top: 10px; left: 10px;
+    background: rgba(4, 25, 74, .88); color: #fff;
+    font-size: 12px; font-weight: 800; letter-spacing: .04em;
+    padding: 4px 12px; border-radius: 999px;
+}
+.portfolio-card__label--na { background: rgba(27, 215, 65, .9); }
+.portfolio-card figcaption {
+    padding: 12px 16px; font-weight: 700; color: #10357a; font-size: 14.5px;
+    border-top: 1px solid #eef1f7;
+}
+.portfolio-cta {
+    text-align: center; background: linear-gradient(135deg, #002970, #0a46ad);
+    border-radius: 20px; padding: 34px 24px; color: #fff; margin-bottom: 30px;
+}
+.portfolio-cta h2 { color: #fff; font-size: 26px; margin: 0 0 8px; }
+.portfolio-cta p { color: rgba(255,255,255,.9); margin: 0 auto 18px; max-width: 560px; }
+.portfolio-cta .group-communication { justify-content: center; }
+.portfolio-cta .group-communication__txt { color: rgba(255,255,255,.8); }
+.portfolio-cta .group-call { color: #fff; }
+@media (max-width: 640px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Home portfolio-CTA ---------- */
+.home-portfolio-cta { text-align: center; margin-top: 22px; }
+.home-portfolio-cta__link {
+    display: inline-block; padding: 13px 26px; border-radius: 999px;
+    background: #002970; color: #fff !important; font-weight: 700; font-size: 15.5px;
+    text-decoration: none; box-shadow: 0 6px 18px rgba(0,41,112,.28);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.home-portfolio-cta__link:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,41,112,.4); }

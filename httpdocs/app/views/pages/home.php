@@ -103,6 +103,10 @@
                 </div>
             </div>
             <?php endif; ?>
+
+            <div class="home-portfolio-cta">
+                <a class="home-portfolio-cta__link" href="/portfolio">📸 Bekijk meer voor- en nafoto's in ons portfolio</a>
+            </div>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 <div class="group-communication">
     <div class="group-whatsapp">
         <a class="group-whatsapp__link js-wa-click" title="WhatsApp ons"
-           href="<?= h(whatsapp_link()) ?>" target="_blank" rel="noreferrer noopener">
+           href="<?= h(wa_context_link()) ?>" target="_blank" rel="noreferrer noopener">
             WhatsApp ons
         </a>
     </div>

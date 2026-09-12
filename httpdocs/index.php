@@ -74,6 +74,8 @@ if ($segments[0] === 'reinigen' && isset($segments[1])) {
     $service = service_by_slug($segments[1]);
     if ($service) {
         $page = service_page($service);
+        // Contextueel WhatsApp-bericht: dienst (+ eventueel stad)
+        $GLOBALS['WA_PREFILL'] = 'Hallo, ik wil graag ' . $service['title'] . ' aanvragen. Kunnen jullie mij een prijsindicatie geven?';
 
         if (!isset($segments[2])) {
             // Dienstpagina
@@ -95,6 +97,7 @@ if ($segments[0] === 'reinigen' && isset($segments[1])) {
 
         $city = city_by_slug($segments[2]);
         if ($city && (int)$city['enabled'] === 1) {
+            $GLOBALS['WA_PREFILL'] = 'Hallo, ik wil graag ' . $service['title'] . ' in ' . $city['name'] . ' aanvragen. Kunnen jullie mij een prijsindicatie geven?';
             // Stadspagina
             $crumbs = [
                 ['title' => 'Home', 'url' => '/'],
@@ -134,6 +137,7 @@ if ($page) {
         'thanks' => 'thanks',
         'page' => 'page',
         'legal' => 'legal',
+        'portfolio' => 'portfolio',
     ];
     $view = $viewMap[$page['template']] ?? 'page';
     $bodyClass = $page['template'] === 'contact' ? 'body__contact'

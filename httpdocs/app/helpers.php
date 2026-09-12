@@ -54,6 +54,12 @@ function media_url(string $path): string
 }
 
 /** WhatsApp-link met vooringesteld bericht */
+/** WhatsApp-link met paginacontext (dienst/stad) als vooringevuld bericht. */
+function wa_context_link(): string
+{
+    return whatsapp_link($GLOBALS['WA_PREFILL'] ?? null);
+}
+
 function whatsapp_link(?string $message = null): string
 {
     $nr = preg_replace('/[^0-9]/', '', setting('whatsapp_number', '31647249157'));

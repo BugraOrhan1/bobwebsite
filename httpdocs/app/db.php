@@ -101,6 +101,14 @@ function db_migrate(PDO $pdo): void
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         ip TEXT, created_at INTEGER
     );
+    CREATE TABLE IF NOT EXISTS portfolio_items (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT,
+        before_img TEXT,
+        after_img TEXT,
+        active INTEGER DEFAULT 1,
+        sort INTEGER DEFAULT 0
+    );
     CREATE TABLE IF NOT EXISTS faqs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         question TEXT NOT NULL,

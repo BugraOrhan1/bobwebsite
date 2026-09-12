@@ -5,7 +5,7 @@
  */
 if (setting('whatsapp_float', '1') !== '1') return;
 ?>
-<a class="wa-float js-wa-click" href="<?= h(whatsapp_link()) ?>" target="_blank" rel="noreferrer noopener"
+<a class="wa-float js-wa-click" href="<?= h(wa_context_link()) ?>" target="_blank" rel="noreferrer noopener"
    aria-label="Stuur ons een WhatsApp-bericht">
     <span class="wa-float__pulse" aria-hidden="true"></span>
     <span class="wa-float__icon" aria-hidden="true">

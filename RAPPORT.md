@@ -182,3 +182,44 @@ en er ontbrak belangrijke (deels wettelijk verplichte) informatie. Wat er is toe
 
 *Testen: zie TESTEN.md. In de preview zie je onderaan de cookie-melding; na "Accepteren"
 wordt Google Analytics pas actief.*
+
+## 7. UPDATE v3 — Portfolio, foutfixes en extra leadfuncties
+
+### Portfolio-pagina (`/portfolio`)
+- Nieuwe pagina **"Portfolio van onze werkzaamheden"** met uw eigen introductietekst
+  (exact overgenomen zoals aangeleverd) en een modern raster van **voor/na-paren**.
+- Gestart met **8 paren**: 5 door AI gegenereerd (hoekbank, fauteuil, eetkamerstoelen,
+  leren bank, matras — steeds exact dezelfde scène, vóór en ná de reiniging) en 3 echte
+  foto's uit de oude site (bankstel, fauteuil, tapijt).
+- Onderaan een conversieblok: *"Ook zo'n schoon resultaat?"* met bel- en
+  WhatsApp-knop — de portfolio werkt dus direct als verkoopargument.
+- De pagina staat **in het hoofdmenu** en in de sitemap, en op de home staat onder
+  "Onze voorbeelden" een nieuwe knop: *"📸 Bekijk meer voor- en nafoto's in ons portfolio"*.
+
+### Beheer → 📸 Portfolio
+- Nieuw admin-onderdeel om voor/na-paren te **toevoegen, bewerken, verbergen,
+  verwijderen en van volgorde te wisselen** (piltjes ↑/↓).
+- Foto's kiest u uit een lijst met voorbeelden per map; live-voorbeeld van de gekozen
+  foto. Nieuwe foto's uploaden kan via **🖼️ Media** (map "portfolio").
+- Tip: zodra uw eigen voor/na-foto's beschikbaar zijn, gewoon via Media uploaden en in
+  deze sectie aan een paar koppelen — de AI-foto's kunt u dan verbergen of verwijderen.
+
+### Foutfixes
+- **Zwevende WhatsApp-knop** goed gezet: pictogram strak rechtsonder, puls-ring exact om
+  het pictogram, tekstballon alléén bij muis-aanraking als tooltip links ervan. Op mobiel
+  zit de knop nú boven de mobiele bel/WhatsApp-balk (niet er overheen).
+- Databasefout opgelost die ontstaan was bij het voorbereiden van de portfolio-tabel
+  (site bleef hierdoor even 500-fouten geven; nu verholpen en getest).
+
+### Extra leadgeneratie
+- **Contextueel vooringevuld WhatsApp-bericht**: op een dienstpagina staat nu bijv.
+  *"Hallo, ik wil graag Bankreiniging aanvragen…"*, en op stadspagina's
+  *"Hallo, ik wil graag Bankreiniging in Amsterdam aanvragen…"* — de bezoeker hoeft
+  alleen nog op verzenden te drukken. Dit geldt voor de zwevende knop, de mobiele balk
+  én de groene WhatsApp-knoppen. Zo ontvangt u direct de juiste dienst + plaats.
+
+### Getest (controle-ronde zoals een bezoeker)
+- Alle menupagina's, 8 dienstpagina's, steekproef stadspagina's, portfolio, tarieven,
+  contact, privacy en cookies: **geen PHP-meldingen, geen dode links/afbeeldingen**.
+- Alle 16 portfolio-foto's laden (HTTP 200); sitemap bevat /portfolio; admin-getest
+  (login, overzicht, bewerk-scherm met fotolijst).

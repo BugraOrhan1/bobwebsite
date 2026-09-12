@@ -527,6 +527,84 @@ if ($route === '/media') {
     exit;
 }
 
+/* ------------------------------------------------------------------ */
+/* Portfolio (voor/na-foto's)                                          */
+/* ------------------------------------------------------------------ */
+
+if ($route === '/portfolio') {
+    $pdo = db();
+    if ($method === 'POST' && csrf_check()) {
+        $action = $_POST['action'] ?? '';
+        $id = (int)($_POST['id'] ?? 0);
+        if ($action === 'delete') $pdo->prepare('DELETE FROM portfolio_items WHERE id = ?')->execute([$id]);
+        if ($action === 'toggle') $pdo->prepare('UPDATE portfolio_items SET active = 1 - active WHERE id = ?')->execute([$id]);
+        if ($action === 'up' || $action === 'down') {
+            $st = $pdo->prepare('SELECT sort FROM portfolio_items WHERE id = ?');
+            $st->execute([$id]);
+            $cur = $st->fetchColumn();
+            if ($cur !== false) {
+                $dir = $action === 'up' ? -1 : 1;
+                $st2 = $pdo->prepare('SELECT id, sort FROM portfolio_items ORDER BY sort ASC, id ASC');
+                $st2->execute();
+                $rows = $st2->fetchAll();
+                $idx = null;
+                foreach ($rows as $i => $r) if ((int)$r['id'] === $id) { $idx = $i; break; }
+                $swap = $idx !== null ? ($rows[$idx + $dir] ?? null) : null;
+                if ($swap) {
+                    $pdo->prepare('UPDATE portfolio_items SET sort = ? WHERE id = ?')->execute([(int)$swap['sort'], $id]);
+                    $pdo->prepare('UPDATE portfolio_items SET sort = ? WHERE id = ?')->execute([(int)$cur, (int)$swap['id']]);
+                }
+            }
+        }
+        redirect('/admin/portfolio');
+    }
+    $items = $pdo->query('SELECT * FROM portfolio_items ORDER BY sort ASC, id ASC')->fetchAll();
+    admin_view('portfolio_list', ['items' => $items]);
+    exit;
+}
+
+if ($route === '/portfolio/edit') {
+    $pdo = db();
+    $id = (int)($_GET['id'] ?? 0);
+    $item = ['id' => 0, 'title' => '', 'before_img' => '', 'after_img' => '', 'active' => 1];
+    if ($id > 0) {
+        $st = $pdo->prepare('SELECT * FROM portfolio_items WHERE id = ?');
+        $st->execute([$id]);
+        $found = $st->fetch();
+        if (!$found) { flash_set('Portfolio-item niet gevonden.', 'err'); redirect('/admin/portfolio'); }
+        $item = $found;
+    }
+    if ($method === 'POST' && csrf_check()) {
+        $data = [
+            trim($_POST['title'] ?? ''),
+            trim($_POST['before_img'] ?? ''),
+            trim($_POST['after_img'] ?? ''),
+            isset($_POST['active']) ? 1 : 0,
+        ];
+        if ($id > 0) {
+            $pdo->prepare('UPDATE portfolio_items SET title = ?, before_img = ?, after_img = ?, active = ? WHERE id = ?')
+                ->execute(array_merge($data, [$id]));
+        } else {
+            $sort = (int)$pdo->query('SELECT COALESCE(MAX(sort),0) FROM portfolio_items')->fetchColumn() + 1;
+            $pdo->prepare('INSERT INTO portfolio_items (title, before_img, after_img, active, sort) VALUES (?,?,?,?,?)')
+                ->execute(array_merge($data, [$sort]));
+        }
+        flash_set('Portfolio-item opgeslagen.');
+        redirect('/admin/portfolio');
+    }
+    // Beschikbare foto's voor de kieslijst
+    $media = [];
+    foreach (['portfolio', 'uploads', 'reinigen', 'home'] as $sub) {
+        $dir = MEDIA_DIR . '/' . $sub;
+        if (!is_dir($dir)) continue;
+        foreach (scandir($dir) as $f) {
+            if (preg_match('/\.(jpe?g|png|webp)$/i', $f)) $media[$sub][] = '/media/' . $sub . '/' . $f;
+        }
+    }
+    admin_view('portfolio_edit', ['item' => $item, 'media' => $media]);
+    exit;
+}
+
 /* Fallback */
 redirect('/admin');
 

@@ -112,6 +112,37 @@ ensure_page('cookies', 'legal', 'Cookiebeleid', [
 ]);
 echo "Privacy- en cookiepagina aanwezig\n";
 
+/* ---------- Portfolio vullen + pagina in menu ---------- */
+$pdo->prepare('UPDATE pages SET template = ?, in_menu = 1, title = ? WHERE slug = ?')
+    ->execute(['portfolio', 'Portfolio', 'portfolio']);
+$stP = $pdo->prepare('SELECT id FROM pages WHERE slug = ?');
+$stP->execute(['portfolio']);
+$portId = (int)$stP->fetchColumn();
+if ($portId) {
+    page_save_field($portId, 'intro_title', 'Portfolio van onze werkzaamheden');
+    page_save_field($portId, 'intro_description',
+        "Benieuwd naar het resultaat van onze werkzaamheden? In ons portfolio vindt u een selectie van banken, stoelen en andere interieuronderdelen die wij professioneel hebben gereinigd.\n\nVan hardnekkige vlekken en vuil tot een grondige opfrisbeurt van uw interieur: wij zorgen ervoor dat uw meubels er weer schoon, fris en verzorgd uitzien.\n\nBekijk hieronder de **voor- en nafoto's** en ontdek zelf het verschil dat een professionele reiniging kan maken.");
+    page_save_field($portId, 'meta_title', 'Portfolio voor/na foto\'s | ' . (setting('site_title') ?: 'De Reinigingsdokter'));
+    page_save_field($portId, 'meta_description', 'Bekijk het resultaat van onze reinigingen: voor- en nafoto\'s van banken, stoelen, matrassen en meer. De Reinigingsdokter zorgt voor een schoon gevoel.');
+}
+$cnt = (int)$pdo->query('SELECT COUNT(*) FROM portfolio_items')->fetchColumn();
+if ($cnt === 0) {
+    $items = [
+        ['Hoekbank (stof) — vlekken verwijderd', '/media/portfolio/ai1-voor.jpg', '/media/portfolio/ai1-na.jpg'],
+        ['Fauteuil (stof) — als nieuw',           '/media/portfolio/ai2-voor.jpg', '/media/portfolio/ai2-na.jpg'],
+        ['Eetkamerstoelen — vlekken weg',         '/media/portfolio/ai3-voor.jpg', '/media/portfolio/ai3-na.jpg'],
+        ['Leren bank — gereinigd en gevoed',      '/media/portfolio/ai4-voor.jpg', '/media/portfolio/ai4-na.jpg'],
+        ['Matras — vlekken en verkleuring weg',   '/media/portfolio/ai5-voor.jpg', '/media/portfolio/ai5-na.jpg'],
+        ['Bankstel — voor/na dieptereiniging',    '/media/reinigen/bankreinigen-voor-reiniging.jpg', '/media/reinigen/bankreinigen-na-reiniging.jpg'],
+        ['Fauteuil — voor/na reiniging',          '/media/reinigen/fauteuilreinigen-voor-reiniging.jpg', '/media/reinigen/fauteuilreinigen-na-reiniging.jpg'],
+        ['Tapijt — voor/na reiniging',            '/media/reinigen/tapijtreiniging/tapijtreiniging-voor-reiniging.jpg', '/media/reinigen/tapijtreiniging/tapijtreiniging-na-reiniging.jpg'],
+    ];
+    $sti = $pdo->prepare('INSERT INTO portfolio_items (title, before_img, after_img, active, sort) VALUES (?,?,?,1,?)');
+    $i = 0;
+    foreach ($items as $it) $sti->execute([$it[0], $it[1], $it[2], $i++]);
+    echo "Portfolio-items: " . count($items) . "\n";
+}
+
 /* ---------- KvK-instelling ---------- */
 $st = $pdo->prepare('SELECT COUNT(*) FROM settings WHERE key = ?');
 $st->execute(['kvk_number']);

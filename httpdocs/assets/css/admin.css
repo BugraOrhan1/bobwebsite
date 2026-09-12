@@ -169,3 +169,8 @@ form.inline { display: inline-block; margin: 0 2px; }
     .admin-main { padding: 18px 16px 60px; }
     .admin-row { grid-template-columns: 1fr; }
 }
+
+/* ---------- Portfolio-beheer ---------- */
+.admin-thumb { width: 74px; height: 74px; object-fit: cover; border-radius: 8px; display: block; }
+.admin-preview { width: 100%; max-width: 320px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; margin-top: 8px; background: #eef1f7; display: block; }
+.admin-table td img { vertical-align: middle; }
