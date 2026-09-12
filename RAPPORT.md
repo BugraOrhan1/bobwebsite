@@ -223,3 +223,31 @@ wordt Google Analytics pas actief.*
   contact, privacy en cookies: **geen PHP-meldingen, geen dode links/afbeeldingen**.
 - Alle 16 portfolio-foto's laden (HTTP 200); sitemap bevat /portfolio; admin-getest
   (login, overzicht, bewerk-scherm met fotolijst).
+
+## 8. UPDATE v4 — Fotovernieuwing en design-polish ("maak alles mooier")
+
+Op verzoek: álle oude foto's (2017) vervangen door moderne, professionele beelden
+en de zichtbare vormfouten opgelost. U heeft hiervoor volledig vrije hand gegeven.
+
+### Nieuwe foto's overal
+- **Hero home**: nieuwe professionele foto (reiniger in navy polo met extractiemachine
+  bij een licht bankstel in een zonnige woonkamer).
+- **Alle dienst- en stadspagina's**: nieuwe voor/na-sliders voor bank, meubels, matras,
+  auto-interieur, tapijt, gevel, zonnepanelen en kantoorpanden — steeds dezelfde scène
+  vóór en ná, dus een eerlijk en mooi "wow"-effect.
+- **Home "Onze voorbeelden"**: nieuwe slider + drie moderne voorbeeldfoto's.
+- Originele 2017-foto's blijven bewaard in de git-historie; de site toont overal de nieuwe.
+
+### Vormfouten opgelost
+- **WhatsApp-knop**: nu waterdicht gepositioneerd (bol strak rechts, puls-ring exact om
+  de bol, tooltip links). Oorzaak van de vorige fout: de browser cachede oude CSS —
+  de versie is verhoogd naar 3.0.0 zodat iedereen de nieuwe stijl direct ziet.
+  Horizontale scrollbalk (die door de oude puls ontstond) is opgeheven.
+- **Reviews**: kaartjes modern afgewerkt (ronde hoeken, zachte schaduw, dienst-label als
+  nette "chip" bovenop de kaart in plaats van afgesneden balk); rustigere achtergrondkleur.
+- **Footer**: vreemde letterlijke "<br>© 2026 - 2026" uit de tekst gehaald; nette
+  ©-regel toegevoegd naast Privacy/Cookies/KvK.
+
+### Getest
+- Home, portfolio, reviews, tarieven, contact en alle 8 dienstpagina's + stadspagina's:
+  geen PHP-meldingen; alle sliders tonen voor/na; alle nieuwe foto's laden (HTTP 200).

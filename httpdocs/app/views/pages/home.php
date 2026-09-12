@@ -74,10 +74,10 @@
         <div class="f-03">
             <h2 class="plus-intro">Onze voorbeelden</h2>
 
-            <?php if (file_exists(MEDIA_DIR . '/reinigen/bankreinigen-voor-reiniging.jpg') && file_exists(MEDIA_DIR . '/reinigen/bankreinigen-na-reiniging.jpg')): ?>
+            <?php if (file_exists(MEDIA_DIR . '/portfolio/ai1-voor.jpg') && file_exists(MEDIA_DIR . '/portfolio/ai1-na.jpg')): ?>
                 <?php view('ba_slider', [
-                    'before' => '/media/reinigen/bankreinigen-voor-reiniging.jpg',
-                    'after' => '/media/reinigen/bankreinigen-na-reiniging.jpg',
+                    'before' => '/media/portfolio/ai1-voor.jpg',
+                    'after' => '/media/portfolio/ai1-na.jpg',
                     'altBefore' => 'Bankstel voor de bankreiniging',
                     'altAfter' => 'Bankstel na de bankreiniging',
                 ]); ?>

@@ -52,6 +52,7 @@
             <?php if (setting('kvk_number')): ?>
                 <span>KvK: <?= h(setting('kvk_number')) ?></span>
             <?php endif; ?>
+            <span>© <?= date('Y') ?> <?= h(setting('site_title')) ?></span>
         </div>
       </div>
 

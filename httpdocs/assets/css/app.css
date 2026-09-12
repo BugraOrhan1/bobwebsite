@@ -10,45 +10,40 @@
     right: 18px;
     bottom: 26px;
     z-index: 9990;
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse; /* label links van de bol, bol strak rechts */
-    gap: 10px;
+    width: 58px;
+    height: 58px;
     text-decoration: none;
 }
 .wa-float__icon {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 58px;
-    height: 58px;
     border-radius: 50%;
     background: #1bd741;
     box-shadow: 0 4px 14px rgba(0, 0, 0, .28);
     transition: transform .15s ease;
-    position: relative;
-    z-index: 2;
-    flex: none;
 }
 .wa-float:hover .wa-float__icon { transform: scale(1.07); }
 .wa-float__pulse {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 58px;
-    height: 58px;
+    inset: 0;
     border-radius: 50%;
     background: #1bd741;
     opacity: .45;
     animation: wa-pulse 2s ease-out infinite;
-    z-index: 1;
+    z-index: -1;
 }
 @keyframes wa-pulse {
     0%   { transform: scale(1);   opacity: .45; }
-    70%  { transform: scale(1.55); opacity: 0; }
-    100% { transform: scale(1.55); opacity: 0; }
+    70%, 100% { transform: scale(1.6); opacity: 0; }
 }
 .wa-float__label {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
     background: #fff;
     color: #10357a;
     font-weight: 700;
@@ -58,17 +53,14 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
     white-space: nowrap;
     opacity: 0;
-    transform: translateX(8px);
     transition: opacity .2s ease, transform .2s ease;
     pointer-events: none;
 }
 .wa-float:hover .wa-float__label,
-.wa-float:focus .wa-float__label { opacity: 1; transform: translateX(0); }
+.wa-float:focus .wa-float__label { opacity: 1; transform: translateY(-50%) translateX(0); }
 
 @media (max-width: 760px) {
-    .wa-float { right: 12px; bottom: 70px; } /* net boven de mobiele bel/WhatsApp-balk */
-    .wa-float__icon { width: 52px; height: 52px; }
-    .wa-float__pulse { width: 52px; height: 52px; }
+    .wa-float { right: 12px; bottom: 70px; width: 52px; height: 52px; }
     .wa-float__icon svg { width: 26px; height: 26px; }
     .wa-float__label { display: none; }
 }
@@ -408,3 +400,32 @@ h1, h2, h3, .lane__title, .hero-02__title, .plus-intro, .box-cta__title {
     transition: transform .15s ease, box-shadow .15s ease;
 }
 .home-portfolio-cta__link:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,41,112,.4); }
+
+/* ---------- Reviews-polish v3 ---------- */
+html, body { overflow-x: hidden; }
+.lane-reviews { background: #f4f7fb; overflow: visible; padding: 64px 0 56px; }
+.lane-reviews__title { font-size: 30px; font-weight: 800; margin-bottom: 26px; }
+.review__item { padding-top: 14px; }
+.review__block {
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(20, 30, 60, .08);
+    padding: 22px 20px 18px;
+    margin-bottom: 16px;
+}
+.review__service {
+    top: 0;
+    margin-top: -16px;
+    right: 16px;
+    border-radius: 999px;
+    padding: 5px 16px;
+    box-shadow: 0 4px 12px rgba(0, 41, 112, .18);
+    background: linear-gradient(to bottom, #c3e9f3 0, #91dcf3 100%);
+}
+.review__categorie { font-size: 12.5px; letter-spacing: .03em; }
+.review__name { color: #10357a; }
+.review__title { color: #1c2b4a; }
+.review__content p { color: #45536e; }
+
+/* ---------- Footer-polish v3 ---------- */
+.footer_legal { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.footer_legal span { color: #9aa7bd; }
