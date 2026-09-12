@@ -360,6 +360,10 @@ if ($route === '/reviews') {
             $pdo->prepare('DELETE FROM reviews WHERE id = ?')->execute([(int)$_POST['id']]);
             flash_set('Review verwijderd.');
         }
+        if ($action === 'approve') {
+            $pdo->prepare('UPDATE reviews SET active = 1, pending = 0 WHERE id = ?')->execute([(int)$_POST['id']]);
+            flash_set('Review goedgekeurd en gepubliceerd op de site.');
+        }
         if ($action === 'toggle') {
             $pdo->prepare('UPDATE reviews SET active = 1 - active WHERE id = ?')->execute([(int)$_POST['id']]);
         }

@@ -7,6 +7,12 @@
     <a class="btn btn--primary" href="/admin/reviews/edit?id=0">➕ Nieuwe review toevoegen</a>
 </div>
 
+<?php usort($reviews, fn($a, $b) => (int)($b['pending'] ?? 0) <=> (int)($a['pending'] ?? 0)); ?>
+<?php $pendingCount = count(array_filter($reviews, fn($r) => !empty($r['pending']))); ?>
+<?php if ($pendingCount): ?>
+    <p class="admin-flash">⏳ <?= $pendingCount ?> nieuwe beoordeling(en) wachten op goedkeuring.</p>
+<?php endif; ?>
+
 <table class="admin-table">
     <thead><tr><th>Dienst</th><th>Klant</th><th>Titel</th><th>Recensie</th><th>Status</th><th></th></tr></thead>
     <tbody>
@@ -16,8 +22,16 @@
             <td class="nowrap"><?= h($r['name']) ?></td>
             <td><?= h(mb_strimwidth($r['title'] ?: '—', 0, 40, '…')) ?></td>
             <td><?= h(mb_strimwidth(strip_tags($r['content']), 0, 60, '…')) ?></td>
-            <td><?= $r['active'] ? '🟢' : '⚪ verborgen' ?></td>
+            <td><?= $r['active'] ? '🟢' : (!empty($r['pending']) ? '⏳ nieuw' : '⚪ verborgen') ?></td>
             <td class="nowrap">
+                <?php if (!empty($r['pending'])): ?>
+                <form method="post" class="inline">
+                    <?= csrf_field() ?>
+                    <input type="hidden" name="action" value="approve">
+                    <input type="hidden" name="id" value="<?= (int)$r['id'] ?>">
+                    <button class="btn btn--small btn--primary" type="submit">✅ Publiceren</button>
+                </form>
+                <?php endif; ?>
                 <a class="btn btn--small" href="/admin/reviews/edit?id=<?= (int)$r['id'] ?>">✏️</a>
                 <form method="post" class="inline">
                     <?= csrf_field() ?>

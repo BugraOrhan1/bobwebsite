@@ -17,6 +17,7 @@ function db(): PDO
         $pdo->exec('PRAGMA journal_mode=WAL');
         $pdo->exec('PRAGMA foreign_keys=ON');
         db_migrate($pdo);
+        try { $pdo->exec('ALTER TABLE reviews ADD COLUMN pending INTEGER DEFAULT 0'); } catch (PDOException $e) { /* kolom bestaat al */ }
     }
     return $pdo;
 }
@@ -76,7 +77,8 @@ function db_migrate(PDO $pdo): void
         service TEXT,
         country TEXT DEFAULT 'nl',
         active INTEGER DEFAULT 1,
-        sort INTEGER DEFAULT 0
+        sort INTEGER DEFAULT 0,
+        pending INTEGER DEFAULT 0
     );
     CREATE TABLE IF NOT EXISTS price_groups (
         id INTEGER PRIMARY KEY AUTOINCREMENT,

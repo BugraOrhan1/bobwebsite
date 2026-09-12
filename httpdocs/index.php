@@ -123,6 +123,30 @@ if ($segments[0] === 'reinigen' && isset($segments[1])) {
     }
 }
 
+// Review insturen door klant (wordt pas zichtbaar na goedkeuring in beheer)
+if ($path === 'reviews' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+    if (!csrf_check()) redirect('/reviews');
+    if (trim($_POST['website'] ?? '') !== '') redirect('/reviews'); // honeypot
+    $name = trim($_POST['name'] ?? '');
+    $content = trim($_POST['content'] ?? '');
+    $rating = (int)($_POST['rating'] ?? 5);
+    if ($name === '' || $content === '') {
+        flash_set('Vul uw naam en een korte beoordeling in.', 'err');
+        redirect('/reviews');
+    }
+    if ($rating < 1 || $rating > 5) $rating = 5;
+    db()->prepare('INSERT INTO reviews (title, name, content, service, country, active, sort, pending) VALUES (?,?,?,?,?,0,99,1)')
+        ->execute([
+            trim($_POST['title'] ?? ''),
+            $name,
+            $content,
+            trim($_POST['service'] ?? ''),
+            'nl',
+        ]);
+    flash_set('Bedankt voor uw beoordeling! Na een korte controle publiceren wij deze op de site.', 'ok');
+    redirect('/reviews?bedankt=1');
+}
+
 // Vaste pagina's op slug
 $page = page_by_slug($path);
 if ($page) {

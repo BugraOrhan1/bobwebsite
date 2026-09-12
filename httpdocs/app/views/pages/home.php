@@ -142,7 +142,7 @@ $secondTwo = array_slice($reviews, $half, 2);
           <?php view('reviews_block', ['reviews' => $secondTwo, 'showHeading' => false]); ?>
       </div>
       <div class="review-cta">
-          <a href="<?= h(setting('review_link', 'https://www.google.com/search?q=De+Reinigingsdokter+reviews')) ?>" target="_blank" rel="noopener">⭐ Klant geweest? Laat ook een beoordeling achter</a>
+          <a href="/reviews#review-form">⭐ Klant geweest? Laat ook een beoordeling achter</a>
       </div>
     </div>
 
