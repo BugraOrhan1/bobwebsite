@@ -251,3 +251,30 @@ en de zichtbare vormfouten opgelost. U heeft hiervoor volledig vrije hand gegeve
 ### Getest
 - Home, portfolio, reviews, tarieven, contact en alle 8 dienstpagina's + stadspagina's:
   geen PHP-meldingen; alle sliders tonen voor/na; alle nieuwe foto's laden (HTTP 200).
+
+## 9. UPDATE v5 — Volledige audit + laatste polish
+
+Complete controle uitgevoerd van álle pagina's (home, 8 diensten, steekproef
+stadspagina's, portfolio, tarieven, reviews, contact, privacy, cookies, 404 en alle
+15 admin-schermen): geen PHP-meldingen, geen dode afbeeldingen/links.
+
+### gevonden en opgelost
+- **Kernfix**: teksten met regeleinden toonden letterlijk "`<br>`" (o.a. in reviews en
+  footer) — oorzaak zat in de tekst-opmaakfunctie; nu echte regeleinden overal.
+- **Hero**: oude witte waas van het 2017-sjabloon lag nog over de nieuwe foto — weggehaald,
+  de foto komt nu vol tot zijn recht met een modern donkerblauw kleurverloop voor
+  leesbare tekst.
+- **Reviews**: kaartjes kregen weer volle ronde hoeken zonder afgesneden labels.
+- **"We reinigen"**: oude lijstjes zijn nu moderne witte kaarten met icoon, schaduw en
+  hover-effect (net raster op elke schermgrootte).
+- **Tarieven**: prijzen staan nu in strakke kaarten per categorie met duidelijke
+  bedragen en stippellijntjes.
+- **Formulier**: moderne invoervelden met afronding en blauwe focus-ring.
+- **404-pagina**: vriendelijke pagina met grote "404", hulp-tekst en knoppen naar home
+  en WhatsApp (i.p.v. schreeuwerige "OOPS!"-tekst).
+- **Footer Facebook**: trage externe Facebook-plugin vervangen door een nette eigen
+  social-kaart met logo en directe links naar Facebook én Instagram (laadt sneller,
+  werkt altijd).
+- **USP-rij**: ontbrekend icoontje bij "Aan huis gereinigd" toegevoegd (🏠).
+- **Delen op social (og:image)**: deelt nu de nieuwe hero-foto in plaats van het logo.
+- CSS-versie verhoogd naar 3.1.0 zodat bezoekers de nieuwe stijl direct zien.

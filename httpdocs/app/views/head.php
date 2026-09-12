@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="<?= h(setting('site_title')) ?>">
 <meta property="og:url" content="<?= h($ctx['canonical']) ?>">
 <meta property="og:description" content="<?= h($ctx['meta_description']) ?>">
-<meta property="og:image" content="<?= h(base_url() . '/assets/logo/Gemini_Generated_Image_e5gvwve5gvwve5gv-removebg-preview.png') ?>">
+<meta property="og:image" content="<?= h(base_url() . '/media/home/De-Reinigingsdokter-schoon-gevoel-web.jpg') ?>">
 <meta name="theme-color" content="#002970">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

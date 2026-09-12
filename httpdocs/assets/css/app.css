@@ -429,3 +429,87 @@ html, body { overflow-x: hidden; }
 /* ---------- Footer-polish v3 ---------- */
 .footer_legal { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 .footer_legal span { color: #9aa7bd; }
+
+/* ---------- Polish v5 ---------- */
+.hero-02:before { display: none; } /* oude witte waas over de nieuwe hero weg */
+.review__block { overflow: visible; } /* anders wordt het dienst-label afgesneden */
+
+/* Diensttegels als moderne kaarten */
+.service-items {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 0; padding: 0;
+}
+.service-item { width: auto !important; margin: 0 !important; list-style: none; }
+.service-item__link {
+    flex-direction: column !important;
+    align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 16px 20px !important;
+    box-shadow: 0 6px 18px rgba(20, 30, 60, .08);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.service-item__link:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(20, 30, 60, .15); }
+.service-item__image { width: 60px; height: 60px; flex: none; margin: 0 0 12px; }
+.service-item__image svg { width: 100%; height: 100%; }
+.service-item__title {
+    width: 100% !important; flex: none !important; padding: 0 !important;
+    text-align: center !important; font-weight: 700; font-size: 15.5px; line-height: 1.3;
+}
+
+/* Prijzen als strakke kaarten */
+.prices { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.prices__col { background: #fff; border-radius: 16px; padding: 18px; box-shadow: 0 6px 18px rgba(20, 30, 60, .08); }
+.prices-item__title {
+    font-size: 18px; font-weight: 800; color: #002970;
+    margin-bottom: 10px; padding-bottom: 10px; border-bottom: 2px solid #c3e9f3;
+}
+.prices-item { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 7px 0; border-bottom: 1px dashed #e3e9f4; }
+.prices-item:last-child { border-bottom: 0; }
+.prices-item__type-desc { font-size: 14.5px; color: #45536e; }
+.prices-item_price { font-weight: 800; color: #002970; white-space: nowrap; }
+.prices__btw { margin-top: 14px; color: #6b7a94; font-size: 13px; }
+
+/* Formulier modern */
+.form-01 input[type="text"], .form-01 input[type="email"], .form-01 input[type="tel"],
+.form-01 textarea, .form-01 select, .form-01__control {
+    width: 100%;
+    border: 1.5px solid #d7dfeb;
+    border-radius: 10px;
+    padding: 11px 14px;
+    font: inherit;
+    color: #1c2b4a;
+    background: #fff;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.form-01 input:focus, .form-01 textarea:focus, .form-01 select:focus {
+    outline: none; border-color: #002970; box-shadow: 0 0 0 3px rgba(0, 41, 112, .12);
+}
+.form-01 label { font-weight: 700; color: #10357a; font-size: 14px; }
+
+/* 404 vriendelijk */
+.error-404 { padding: 80px 0; text-align: center; }
+.error-404__code {
+    font-size: 96px; font-weight: 800; color: #c3e9f3; line-height: 1;
+    letter-spacing: -0.03em;
+}
+.error-404__txt { max-width: 560px; margin: 12px auto 24px; color: #45536e; font-size: 16px; line-height: 1.6; }
+.error-404__btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.error-404__btn {
+    display: inline-block; padding: 13px 24px; border-radius: 999px;
+    font-weight: 700; text-decoration: none;
+}
+.error-404__btn--home { background: #002970; color: #fff; }
+.error-404__btn--wa { background: #1bd741; color: #fff; box-shadow: 0 6px 18px rgba(27, 215, 65, .35); }
+
+/* Footer social-kaart */
+.footer-social {
+    background: #fff; border-radius: 14px; padding: 16px;
+    display: flex; align-items: center; gap: 12px; max-width: 320px;
+}
+.footer-social img { width: 44px; height: 44px; border-radius: 10px; background: #fff; }
+.footer-social strong { display: block; color: #002970; }
+.footer-social a { color: #10357a; font-weight: 700; text-decoration: none; }
+.footer-social a:hover { text-decoration: underline; }

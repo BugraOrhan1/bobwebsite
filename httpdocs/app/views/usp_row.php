@@ -1,6 +1,6 @@
 <div class="usp-row">
     <div class="usp-row__item">
-        <span class="usp-row__icon"></span>
+        <span class="usp-row__icon">🏠</span>
         <strong>Aan huis gereinigd</strong>
         <span>Geen gesleep met meubels — wij komen naar u toe</span>
     </div>

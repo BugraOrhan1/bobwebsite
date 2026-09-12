@@ -5,7 +5,6 @@ window.__RDS_ADS_WA_LABEL__ = <?= json_encode(setting('ads_conversion_whatsapp',
 </script>
 <script src="/assets/_prod/min-base-all.js?v=<?= APP_VERSION ?>"></script>
 <script src="/assets/js/app.js?v=<?= APP_VERSION ?>" defer></script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v9.0&appId=784779474897380&autoLogAppEvents=1"></script>
 
 <?php
 // Breadcrumbs voor structured data

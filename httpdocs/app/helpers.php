@@ -100,7 +100,8 @@ function ktext(?string $text): string
 
     $flushPara = function () use (&$para, &$html) {
         if ($para) {
-            $html .= '<p>' . ktext_inline(implode('<br>', $para)) . '</p>';
+            // eerst per regel escapen/opmaken, dán pas regeleinden toevoegen
+            $html .= '<p>' . implode('<br>', array_map('ktext_inline', $para)) . '</p>';
             $para = [];
         }
     };

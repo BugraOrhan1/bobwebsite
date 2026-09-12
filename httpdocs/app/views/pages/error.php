@@ -1,19 +1,16 @@
-<section class="lane">
-  <div class="container-fluid">
-    <div class="lane__content">
-      <h2 class="lane__title">Sorry, deze pagina kan niet gevonden worden</h2>
-      <h1 class="lane__subtitle">OOPS! ER IS IETS FOUT GEGAAN!</h1>
+<section class="lane error-404">
+    <div class="container-fluid">
+        <div class="error-404__box">
+            <div class="error-404__code">404</div>
+            <h1 class="lane__title">Oeps — deze pagina bestaat niet (meer)</h1>
+            <p class="error-404__txt">
+                Geen zorgen: uw meubels kunnen we wél gewoon vinden én schoonmaken.
+                Ga terug naar de homepage of vraag direct een vrijblijvende prijs aan via WhatsApp.
+            </p>
+            <div class="error-404__btns">
+                <a class="error-404__btn error-404__btn--home" href="/">← Terug naar home</a>
+                <a class="error-404__btn error-404__btn--wa" href="<?= h(whatsapp_link('Hallo, ik heb een vraag over mijn reiniging.')) ?>" target="_blank" rel="noopener">💬 Stel uw vraag via WhatsApp</a>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
-<section class="lane">
-  <div class="container-fluid">
-    <div class="lane__content">
-      <p class="lane__para">
-        We verontschuldigen ons, maar de door je gevraagde pagina kan niet gevonden worden. Het is waarschijnlijk verlopen, verplaatst, of hernoemd. Als je
-        de pagina-URL handmatig in je browser hebt ingevoerd, controleer dan je spelling en probeer het opnieuw of ga door en bezoek onze homepage.
-      </p>
-      <p class="box-cta__reservation"><a class="_btn button-02" href="/">Terug naar de home pagina</a></p>
-    </div>
-  </div>
 </section>

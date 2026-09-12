@@ -24,15 +24,15 @@
       </div>
 
         <div class="f-item">
-            <h3 class="footer_title">Onze facebook</h3>
-            <div id="fb-root"></div>
-            <div class="fb-page"
-                 data-href="<?= h(setting('facebook')) ?>"
-                 data-width="300"
-                 data-adapt-container-width="true"
-                 data-hide-cover="true"
-                 data-lazy="true"
-                 data-show-facepile="false"></div>
+            <h3 class="footer_title">Volg ons</h3>
+            <div class="footer-social">
+                <img src="/assets/logo/Gemini_Generated_Image_e5gvwve5gvwve5gv-removebg-preview.png" alt="Logo De Reinigingsdokter">
+                <div>
+                    <strong>De Reinigingsdokter</strong>
+                    <a href="<?= h(setting('facebook')) ?>" target="_blank" rel="noopener">Facebook →</a><br>
+                    <a href="<?= h(setting('instagram')) ?>" target="_blank" rel="noopener">Instagram →</a>
+                </div>
+            </div>
         </div>
 
       <div class="f-item">
