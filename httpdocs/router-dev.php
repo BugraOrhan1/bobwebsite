@@ -8,7 +8,7 @@ $uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 // Bestaande bestanden direct serveren
 $file = __DIR__ . $uri;
 if ($uri !== '/' && file_exists($file) && !is_dir($file)
-    && !substr($uri, 0, 5) !== '/app/' && substr($uri, 0, 6) !== '/data/') {
+    && substr($uri, 0, 5) !== '/app/' && substr($uri, 0, 6) !== '/data/') {
     return false;
 }
 
