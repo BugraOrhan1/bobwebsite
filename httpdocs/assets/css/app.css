@@ -513,3 +513,40 @@ html, body { overflow-x: hidden; }
 .footer-social strong { display: block; color: #002970; }
 .footer-social a { color: #10357a; font-weight: 700; text-decoration: none; }
 .footer-social a:hover { text-decoration: underline; }
+
+/* ---------- Polish v6 ---------- */
+/* Prijskaarten: padding die altijd wint, lichtere rand, geen lege stretch-ruimte */
+.prices { align-items: start; }
+.prices__col {
+    padding: 20px 20px 12px !important;
+    border: 1px solid #e3e9f4 !important;
+    box-shadow: 0 6px 18px rgba(20, 30, 60, .08) !important;
+}
+.prices-item__title { padding-left: 0 !important; margin-top: 0 !important; }
+.prices-items { margin-top: 4px; }
+.prices-item { padding: 8px 0 !important; }
+
+/* Mobiel: geen dubbel telefoonnummer in de blauwe kop */
+@media (max-width: 760px) {
+    .header-col__phone_2 { display: none !important; }
+}
+
+/* Footer: rustig raster i.p.v. scheve flex-kolommen */
+footer .f-main {
+    display: grid !important;
+    grid-template-columns: 1.3fr 1fr 1.1fr auto;
+    gap: 36px;
+    align-items: start;
+}
+footer .f-item {
+    max-width: none !important;
+    flex: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+.footer_legal { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.footer_legal span { white-space: nowrap; }
+@media (max-width: 900px) { footer .f-main { grid-template-columns: 1fr 1fr; gap: 28px; } }
+@media (max-width: 600px) { footer .f-main { grid-template-columns: 1fr; } }

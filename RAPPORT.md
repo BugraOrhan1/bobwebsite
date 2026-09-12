@@ -278,3 +278,18 @@ stadspagina's, portfolio, tarieven, reviews, contact, privacy, cookies, 404 en a
 - **USP-rij**: ontbrekend icoontje bij "Aan huis gereinigd" toegevoegd (🏠).
 - **Delen op social (og:image)**: deelt nu de nieuwe hero-foto in plaats van het logo.
 - CSS-versie verhoogd naar 3.1.0 zodat bezoekers de nieuwe stijl direct zien.
+
+## 10. UPDATE v6 — Na live-test op test.reinigingsdokter.nl
+
+- **Leer verwijderd**: jullie reinigen geen leer — het portfolio-item "Leren bank" is
+  weg en de voorbeeldfoto op de home is vervangen door eetkamerstoelen.
+- **Prijskaarten**: tekst niet meer tegen de rand (echte binnenmarge) en kaarten
+  strekken niet meer uit met lege witte ruimte onderaan.
+- **Footer**: netter raster — kolommen netjes uitgelijnd, juridische links en
+  ©-regel rustig onder elkaar zonder vreemde afbraken.
+- **Mobiel**: het dubbele telefoonnummer in de blauwe kop op de homepage is weg
+  (de bel-knop zit al in de mobiele balk onderaan).
+- CSS-versie 3.2.0.
+
+LET OP voor live: na elke update moeten de bestanden opnieuw naar de hosting
+(worden hieronder bij "Live zetten" uitgelegd) — anders blijft de oude versie staan.

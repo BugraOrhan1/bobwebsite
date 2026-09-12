@@ -131,7 +131,7 @@ if ($cnt === 0) {
         ['Hoekbank (stof) — vlekken verwijderd', '/media/portfolio/ai1-voor.jpg', '/media/portfolio/ai1-na.jpg'],
         ['Fauteuil (stof) — als nieuw',           '/media/portfolio/ai2-voor.jpg', '/media/portfolio/ai2-na.jpg'],
         ['Eetkamerstoelen — vlekken weg',         '/media/portfolio/ai3-voor.jpg', '/media/portfolio/ai3-na.jpg'],
-        ['Leren bank — gereinigd en gevoed',      '/media/portfolio/ai4-voor.jpg', '/media/portfolio/ai4-na.jpg'],
+        ['Eetkamerstoelen (stof) — weer als nieuw', '/media/portfolio/ai3-voor.jpg', '/media/portfolio/ai3-na.jpg'],
         ['Matras — vlekken en verkleuring weg',   '/media/portfolio/ai5-voor.jpg', '/media/portfolio/ai5-na.jpg'],
         ['Bankstel — voor/na dieptereiniging',    '/media/reinigen/bankreinigen-voor-reiniging.jpg', '/media/reinigen/bankreinigen-na-reiniging.jpg'],
         ['Fauteuil — voor/na reiniging',          '/media/reinigen/fauteuilreinigen-voor-reiniging.jpg', '/media/reinigen/fauteuilreinigen-na-reiniging.jpg'],
