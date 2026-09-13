@@ -368,3 +368,22 @@ Na grondige referentie-audit (elke file nagezocht in code, CSS én database) ver
 RAPPORT.md/TESTEN.md, video op matraspagina.
 
 Repo is nu ±60% lichter en bevat alleen nog wat de site echt gebruikt.
+
+## 15. Klaar voor live — noindex eraf, SEO-behoud geregeld
+
+- **test_noindex staat nu op 0** in de database: zodra de bestanden op het echte
+  domein staan, mag Google de site direct indexeren. (De TEST-subdomein houdt z'n
+  eigen database met noindex AAN, dus daar geen dubbele content.)
+- **Title-tag en meta-omschrijving zijn identiek aan de oude site** — Google herkent
+  de pagina's als dezelfde en behoudt posities/klikken.
+- **Zelfde URL-structuur als de oude site** (/reinigen/bank-reinigen, stadspagina's,
+  /contact…) — bestaande backlinks en Google-posities blijven gewoon werken,
+  geen 301-redirects nodig.
+
+### Lanceerstappen (volgorde)
+1. In mijndomein-paneel: **backup/zip** van de oude site (voor de zekerheid).
+2. Nieuwste bestanden (inhoud `httpdocs`, incl. `data/`) uploaden naar het **echte domein**.
+3. Controleren: `https://www.reinigingsdokter.nl/` toont nieuwe site; `/admin` werkt.
+4. Wachtwoord wijzigen (Mijn account).
+5. Google Search Console: domein verificeren (is al) + **sitemap indienen**: /sitemap.xml.
+6. Google Ads: campagnes op het echte domein zetten; conversies staan al ingesteld.
