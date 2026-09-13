@@ -387,3 +387,22 @@ Repo is nu ±60% lichter en bevat alleen nog wat de site echt gebruikt.
 4. Wachtwoord wijzigen (Mijn account).
 5. Google Search Console: domein verificeren (is al) + **sitemap indienen**: /sitemap.xml.
 6. Google Ads: campagnes op het echte domein zetten; conversies staan al ingesteld.
+
+## 16. Livegang (14-09-2026)
+
+Site is live op het hoofddomein; oude Kirby-site vervangen, test-subdomein opgeheven (map leeg, geeft fout — geen SEO-risico).
+
+Gecontroleerd na livegang:
+- Homepage, diensten, stadspagina's, contact, portfolio: OK
+- /sitemap.xml: OK (alle ~1.300 URL's)
+- /admin login: OK
+- Cookiebanner + Google Consent Mode aanwezig
+
+Nog doen door eigenaar (checklist):
+1. Beheer → Mijn account: **wachtwoord wijzigen** (standaardwachtwoord stond in chat/GitHub).
+2. Beheer → Instellingen opnieuw invullen (live-DB komt uit GitHub):
+   - notificatie-e-mail = eigen Gmail (leads in gelezen mailbox)
+   - Ads conversie-ID `AW-8102211098`, formulierlabel `7765473765`, WhatsApp-label na aanmaken 2e conversie
+3. Search Console: sitemap `sitemap.xml` indienen.
+4. Test-lead versturen → controleer inbox + spamfolder.
+5. Eventueel subdomein `test.` definitief verwijderen bij mijndomein.
