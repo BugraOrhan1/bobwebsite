@@ -1,14 +1,21 @@
 <?php /** @var array $ctx */ ?>
 <head><meta charset="utf-8"><title><?= h($ctx['meta_title']) ?></title>
 <meta name="description" content="<?= h($ctx['meta_description']) ?>"/>
-<?php $gtag = setting('analytics_id'); $adsId = setting('ads_id'); $consent = $_COOKIE['rd_consent'] ?? null; ?>
-<?php if ($gtag && $consent === 'yes'): ?>
+<?php $gtag = setting('analytics_id'); $adsId = setting('ads_id'); $consent = $_COOKIE['rd_consent'] ?? null; $gr = ($consent === 'yes') ? 'granted' : 'denied'; ?>
+<?php if ($gtag || $adsId): ?>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('consent','default',{'ad_storage':'<?= $gr ?>','analytics_storage':'<?= $gr ?>','ad_user_data':'<?= $gr ?>','ad_personalization':'<?= $gr ?>','wait_for_update':400});
+</script>
+<?php if ($gtag): ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?= h($gtag) ?>"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','<?= h($gtag) ?>');</script>
+<script>gtag('config','<?= h($gtag) ?>',{'anonymize_ip':true});</script>
 <?php endif; ?>
-<?php if ($adsId && $consent === 'yes'): ?>
+<?php if ($adsId): ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?= h($adsId) ?>"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','<?= h($adsId) ?>');</script>
+<script>gtag('config','<?= h($adsId) ?>');</script>
+<?php endif; ?>
 <?php endif; ?>
 <meta http-equiv="language" content="nl">
 <meta name="robots" content="<?= setting('test_noindex', '0') === '1' ? 'noindex, nofollow' : 'index, follow' ?>">

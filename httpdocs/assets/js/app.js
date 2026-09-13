@@ -102,6 +102,10 @@
         bar.style.display = 'flex';
         bar.querySelector('.cookie-bar__accept')?.addEventListener('click', function () {
             setCookie('rd_consent', 'yes', 180);
+            if (window.gtag) gtag('consent', 'update', {
+                'ad_storage': 'granted', 'analytics_storage': 'granted',
+                'ad_user_data': 'granted', 'ad_personalization': 'granted'
+            });
             window.location.reload();
         });
         bar.querySelector('.cookie-bar__decline')?.addEventListener('click', function () {
