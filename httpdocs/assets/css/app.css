@@ -656,3 +656,6 @@ footer a { color: #c3e9f3; }
 @media (max-width: 860px) {
     .snel-offerte__box { grid-template-columns: 1fr; padding: 26px 20px; }
 }
+
+/* ---------- v11: v.a.-prijsjes ---------- */
+.prices-item__va { font-size: 11.5px; font-weight: 700; color: #6b7a94; letter-spacing: .02em; }

@@ -10,7 +10,7 @@
                     <?php foreach ($g['items'] as $it): ?>
                         <div class="prices-item">
                             <div class="prices-item__type"><span class="prices-item__type-desc"><?= h($it['name']) ?></span></div>
-                            <div class="prices-item_price"><?= h($it['price']) ?></div>
+                            <div class="prices-item_price"><?= preg_match('/€|\d/', $it['price']) ? '<span class="prices-item__va">v.a.</span> ' : '' ?><?= h($it['price']) ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
