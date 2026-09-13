@@ -24,7 +24,7 @@
                             <div class="review-form__row">
                                 <div>
                                     <label for="rv-name">Uw naam *</label>
-                                    <input id="rv-name" type="text" name="name" required>
+                                    <input id="rv-name" type="text" name="name" required autocomplete="name">
                                 </div>
                                 <div>
                                     <label for="rv-rating">Score</label>

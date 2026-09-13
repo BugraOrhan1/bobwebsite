@@ -117,8 +117,8 @@
             <form method="post" action="/snel-offerte" class="snel-offerte__form">
                 <?= csrf_field() ?>
                 <input type="text" name="website" class="review-form__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <input type="text" name="name" placeholder="Uw naam *" required>
-                <input type="tel" name="phone" placeholder="Telefoonnummer *" required>
+                <input type="text" name="name" placeholder="Uw naam *" required autocomplete="name">
+                <input type="tel" name="phone" placeholder="Telefoonnummer *" required autocomplete="tel">
                 <select name="service">
                     <option value="">Wat mogen wij reinigen?</option>
                     <?php foreach (all_services() as $s): ?>

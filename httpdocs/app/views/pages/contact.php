@@ -31,7 +31,7 @@
                                 <div class="col-xs-12 col-sm-6">
                                     <label for="js-name">Naam</label>
                                     <input class="form-01__control<?= isset($errors['fullName']) ? ' error' : '' ?>"
-                                           id="js-name" type="text"
+                                           id="js-name" type="text" autocomplete="name"
                                            value="<?= h($old['fullName'] ?? '') ?>"
                                            name="fullName" required>
                                     <?php if (isset($errors['fullName'])): ?><p><span style="color: red;"><?= h($errors['fullName']) ?></span></p><?php endif; ?>
@@ -40,7 +40,7 @@
                                 <div class="col-xs-12 col-sm-6">
                                     <label for="js-phone">Telefoonnummer</label>
                                     <input class="form-01__control<?= isset($errors['phone']) ? ' error' : '' ?>"
-                                           id="js-phone" type="tel" name="phone" placeholder="06-"
+                                           id="js-phone" type="tel" autocomplete="tel" name="phone" placeholder="06-"
                                            value="<?= h($old['phone'] ?? '') ?>">
                                     <?php if (isset($errors['phone'])): ?><p><span style="color: red;"><?= h($errors['phone']) ?></span></p><?php endif; ?>
                                 </div>
@@ -50,14 +50,14 @@
                                 <div class="col-xs-12 col-sm-6">
                                     <label for="js-email">E-mail</label>
                                     <input class="form-01__control<?= isset($errors['email']) ? ' error' : '' ?>"
-                                           id="js-email" name="email" type="email"
+                                           id="js-email" name="email" type="email" autocomplete="email"
                                            value="<?= h($old['email'] ?? '') ?>" required>
                                     <?php if (isset($errors['email'])): ?><p><span style="color: red;"><?= h($errors['email']) ?></span></p><?php endif; ?>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6">
                                     <label for="js-woonplaats">Woonplaats</label>
-                                    <input class="form-01__control" name="woonplaats" type="text"
+                                    <input class="form-01__control" name="woonplaats" type="text" autocomplete="address-level2"
                                            value="<?= h($old['woonplaats'] ?? '') ?>">
                                 </div>
                             </div>
@@ -86,8 +86,7 @@
                                         <option value="--">- Hoe heeft u ons gevonden? -</option>
                                         <option value="Google" <?= ($old['lead'] ?? '') === 'Google' ? 'selected' : '' ?>>Google</option>
                                         <option value="Facebook" <?= ($old['lead'] ?? '') === 'Facebook' ? 'selected' : '' ?>>Facebook</option>
-                                        <option value="Instagram" <?= ($old['lead'] ?? '') === 'Instagram' ? 'selected' : '' ?>>Instagram</option>
-                                        <option value="KennissenOfFamilie" <?= ($old['lead'] ?? '') === 'KennissenOfFamilie' ? 'selected' : '' ?>>Via Kennissen of familie</option>
+                                                                                <option value="KennissenOfFamilie" <?= ($old['lead'] ?? '') === 'KennissenOfFamilie' ? 'selected' : '' ?>>Via Kennissen of familie</option>
                                         <option value="Anders" <?= ($old['lead'] ?? '') === 'Anders' ? 'selected' : '' ?>>Anders/etc</option>
                                     </select>
                                 </div>
