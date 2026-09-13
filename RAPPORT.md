@@ -346,3 +346,25 @@ cijfers in.
 - robots.txt/sitemap/canonical/og-tags/structured data: in orde.
 - Wachtwoord wijzigen bij lancering (Mijn account); na upload op echt domein:
   testmodus op Live zetten.
+
+## 14. Grote opschoonbeurt — klaar voor lancering
+
+Na grondige referentie-audit (elke file nagezocht in code, CSS én database) verwijderd:
+
+**Hosting-rommel in de repo-root** (per ongeluk mee-gekopieerde serveromgeving)
+- Mappen: `.composer/`, `bin/`, `error_docs/`, `etc/`, `lib64/`, `logs/`, `usr/`
+- Losse files: `.gitconfig`, `.imunify_patch_id`, `.myimunify_id`, `ntuser.ini`
+
+**Ongebruikte site-bestanden**
+- `httpdocs/eenmalig-opruimen.php` (had z'n werk gedaan)
+- Oude 2017-foto's: `media/home/voorbeeld-*.jpg`, `media/home/modern-*.jpg`,
+  `media/home/+assets/img/bg` oude hero/diepte-foto's, leren-bank-foto's (`ai4`),
+  losse AI-bronnen `ai6–ai9` (de kopieën op de juiste plekken blijven),
+  oude `1-amsterdam`-duplicaten en `tijdens-reiniging`-foto.
+- Ontwikkel-resten: `assets/_con/`, `assets/_dev/`, `assets/fonts/` (slick),
+  `assets/img/loaders/`, `assets/img/voorbeeld/` (hele boom), losse oude svg/jpg's.
+
+**Bewust bewaard**: favicon-set (webmanifest), logo, `router-dev.php` (preview),
+RAPPORT.md/TESTEN.md, video op matraspagina.
+
+Repo is nu ±60% lichter en bevat alleen nog wat de site echt gebruikt.

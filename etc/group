@@ -1,3 +1,0 @@
-root:x:0:
-psaserv:x:1002:psaadm,psaftp,apache,nginx
-psacln:x:1003:

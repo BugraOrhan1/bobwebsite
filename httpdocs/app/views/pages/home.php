@@ -78,18 +78,18 @@
             <div class="home-voorbeelden">
                 <?php
                 $voorbeelden = [
-                    ['Bankstel', 'ai1', 'Bankstel voor de reiniging', 'Bankstel na de reiniging'],
-                    ['Tapijt',   'ai7', 'Tapijt voor de reiniging',   'Tapijt na de reiniging'],
-                    ['Matras',   'ai5', 'Matras voor de reiniging',   'Matras na de reiniging'],
+                    ['Bankstel', '/media/portfolio/ai1-voor.jpg', '/media/portfolio/ai1-na.jpg', 'Bankstel voor de reiniging', 'Bankstel na de reiniging'],
+                    ['Tapijt',   '/media/reinigen/tapijtreiniging/tapijtreiniging-voor-reiniging.jpg', '/media/reinigen/tapijtreiniging/tapijtreiniging-na-reiniging.jpg', 'Tapijt voor de reiniging', 'Tapijt na de reiniging'],
+                    ['Matras',   '/media/reinigen/matrasreiniging/matrasreiniging-voor-reiniging.jpg', '/media/reinigen/matrasreiniging/matrasreiniging-na-reiniging.jpg', 'Matras voor de reiniging', 'Matras na de reiniging'],
                 ];
                 foreach ($voorbeelden as $vb):
-                    if (!file_exists(MEDIA_DIR . '/portfolio/' . $vb[1] . '-voor.jpg')) continue; ?>
+                    if (!file_exists(str_replace('/media/', MEDIA_DIR . '/', $vb[1]))) continue; ?>
                     <div class="home-voorbeelden__item">
                         <?php view('ba_slider', [
-                            'before' => '/media/portfolio/' . $vb[1] . '-voor.jpg',
-                            'after'  => '/media/portfolio/' . $vb[1] . '-na.jpg',
-                            'altBefore' => $vb[2],
-                            'altAfter'  => $vb[3],
+                            'before' => $vb[1],
+                            'after'  => $vb[2],
+                            'altBefore' => $vb[3],
+                            'altAfter'  => $vb[4],
                         ]); ?>
                         <span class="home-voorbeelden__cap"><?= h($vb[0]) ?> — voor/na</span>
                     </div>
