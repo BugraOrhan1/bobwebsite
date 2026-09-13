@@ -146,6 +146,13 @@ if ($path === 'snel-offerte' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST'
             '/',
             client_ip(),
         ]);
+    lead_notify_mail([
+        'name' => $name, 'phone' => $phone, 'email' => '', 'city' => '',
+        'source' => 'snel-offerte',
+        'message' => 'Snel-offerte: terugbelverzoek voor ' . ($service ?: 'een reiniging') . '.',
+        'gclid' => (string)($_COOKIE['rd_gclid'] ?? ''), 'attachment' => '',
+    ], 'Nieuwe snel-offerte (terugbelverzoek)');
+
     flash_set('Bedankt ' . $name . '! Wij bellen u zo snel mogelijk terug met een scherpe prijs.', 'ok');
     redirect('/?offerte=bedankt');
 }
@@ -295,23 +302,11 @@ function handle_contact_post(): void
     ]);
 
     // E-mail notificatie naar eigenaar
-    $to = setting('notify_email');
-    if ($to) {
-        $subject = 'Nieuwe lead via website: ' . $data['fullName'];
-        $body = "Er is een nieuw contactformulier ingevuld op de website.\n\n"
-            . "Naam: {$data['fullName']}\n"
-            . "Telefoon: {$data['phone']}\n"
-            . "E-mail: {$data['email']}\n"
-            . "Woonplaats: {$data['woonplaats']}\n"
-            . "Bron: {$data['lead']}\n"
-            . "GCLID: {$gclid}\n"
-            . "Bijlage: " . ($attachment ? '/data/uploads/' . $attachment : 'geen') . "\n\n"
-            . "Bericht:\n{$data['message']}\n";
-        $headers = 'From: ' . setting('site_title') . ' <' . setting('contact_email') . ">\r\n"
-            . 'Reply-To: ' . $data['email'] . "\r\n"
-            . "Content-Type: text/plain; charset=UTF-8\r\n";
-        @mail($to, $subject, $body, $headers);
-    }
+    lead_notify_mail([
+        'name' => $data['fullName'], 'phone' => $data['phone'], 'email' => $data['email'],
+        'city' => $data['woonplaats'], 'source' => $data['lead'], 'message' => $data['message'],
+        'gclid' => $gclid, 'attachment' => $attachment,
+    ], 'Nieuwe lead via website');
 
     // Bevestiging naar de klant
     if ($data['email']) {
@@ -326,6 +321,30 @@ function handle_contact_post(): void
     }
 
     redirect('/contact/bedankt');
+}
+
+/**
+ * E-mail notificatie naar de eigenaar bij elke nieuwe lead
+ * (contactformulier én snel-offerte). -f zorgt voor een nette
+ * afzender zodat de mail niet snel in spam belandt.
+ */
+function lead_notify_mail(array $d, string $subject): void
+{
+    $to = setting('notify_email');
+    if (!$to) return;
+    $body = "Er is een nieuwe aanvraag via de website.\n\n"
+        . "Naam: {$d['name']}\n"
+        . "Telefoon: " . ($d['phone'] ?: '-') . "\n"
+        . "E-mail: " . ($d['email'] ?: '-') . "\n"
+        . "Woonplaats: " . ($d['city'] ?: '-') . "\n"
+        . "Bron: {$d['source']}\n"
+        . "GCLID: " . ($d['gclid'] ?: '-') . "\n"
+        . "Bijlage: " . ($d['attachment'] ? '/data/uploads/' . $d['attachment'] : 'geen') . "\n\n"
+        . "Bericht:\n{$d['message']}\n";
+    $headers = 'From: ' . setting('site_title') . ' <' . setting('contact_email') . ">\r\n"
+        . ($d['email'] ? 'Reply-To: ' . $d['email'] . "\r\n" : '')
+        . "Content-Type: text/plain; charset=UTF-8\r\n";
+    @mail($to, $subject . ': ' . $d['name'], $body, $headers, '-f' . setting('contact_email'));
 }
 
 function render_sitemap(): string
