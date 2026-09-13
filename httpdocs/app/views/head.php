@@ -11,7 +11,7 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','<?= h($adsId) ?>');</script>
 <?php endif; ?>
 <meta http-equiv="language" content="nl">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="<?= setting('test_noindex', '0') === '1' ? 'noindex, nofollow' : 'index, follow' ?>">
 <meta name="author" content="<?= h(setting('site_title')) ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta property="og:title" content="<?= h($ctx['meta_title']) ?>">

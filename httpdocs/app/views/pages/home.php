@@ -73,38 +73,30 @@
         </div>
         <div class="f-03">
             <h2 class="plus-intro">Onze voorbeelden</h2>
+            <p class="home-voorbeelden__sub">Sleep de knop over de foto's en zie zelf het verschil.</p>
 
-            <?php if (file_exists(MEDIA_DIR . '/portfolio/ai1-voor.jpg') && file_exists(MEDIA_DIR . '/portfolio/ai1-na.jpg')): ?>
-                <?php view('ba_slider', [
-                    'before' => '/media/portfolio/ai1-voor.jpg',
-                    'after' => '/media/portfolio/ai1-na.jpg',
-                    'altBefore' => 'Bankstel voor de bankreiniging',
-                    'altAfter' => 'Bankstel na de bankreiniging',
-                ]); ?>
-            <?php endif; ?>
-
-            <?php
-            $photos = [];
-            foreach (preg_split('/\s*\n\s*/', trim((string)($page['plus_photos'] ?? ''))) as $line) {
-                $line = trim(preg_replace('/^-\s*/', '', $line));
-                if ($line !== '') $photos[] = $line;
-            }
-            ?>
-            <?php if ($photos): ?>
-            <div class="foto">
-                <div class="foto__items">
-                    <?php foreach ($photos as $ph): ?>
-                        <?php if (!file_exists(MEDIA_DIR . '/home/' . $ph)) continue; ?>
-                        <div class="foto__item">
-                            <img class="foto__img" height="300" width="300" loading="lazy"
-                                 src="/media/home/<?= h($ph) ?>" alt="<?= h(pathinfo($ph, PATHINFO_FILENAME)) ?>">
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+            <div class="home-voorbeelden">
+                <?php
+                $voorbeelden = [
+                    ['Bankstel', 'ai1', 'Bankstel voor de reiniging', 'Bankstel na de reiniging'],
+                    ['Tapijt',   'ai7', 'Tapijt voor de reiniging',   'Tapijt na de reiniging'],
+                    ['Matras',   'ai5', 'Matras voor de reiniging',   'Matras na de reiniging'],
+                ];
+                foreach ($voorbeelden as $vb):
+                    if (!file_exists(MEDIA_DIR . '/portfolio/' . $vb[1] . '-voor.jpg')) continue; ?>
+                    <div class="home-voorbeelden__item">
+                        <?php view('ba_slider', [
+                            'before' => '/media/portfolio/' . $vb[1] . '-voor.jpg',
+                            'after'  => '/media/portfolio/' . $vb[1] . '-na.jpg',
+                            'altBefore' => $vb[2],
+                            'altAfter'  => $vb[3],
+                        ]); ?>
+                        <span class="home-voorbeelden__cap"><?= h($vb[0]) ?> — voor/na</span>
+                    </div>
+                <?php endforeach; ?>
             </div>
-            <?php endif; ?>
 
-            <div class="home-portfolio-cta">
+<div class="home-portfolio-cta">
                 <a class="home-portfolio-cta__link" href="/portfolio">📸 Bekijk meer voor- en nafoto's in ons portfolio</a>
             </div>
         </div>
@@ -113,6 +105,30 @@
     </div>
   </div>
 
+</section>
+
+<section class="lane snel-offerte">
+    <div class="container-fluid">
+        <div class="snel-offerte__box">
+            <div class="snel-offerte__txt">
+                <h2>Gratis offerte in 30 seconden</h2>
+                <p>Vul uw naam en telefoonnummer in — wij bellen u terug met een scherpe prijs. Liever zelf appen? Stuur een foto via WhatsApp.</p>
+            </div>
+            <form method="post" action="/snel-offerte" class="snel-offerte__form">
+                <?= csrf_field() ?>
+                <input type="text" name="website" class="review-form__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="text" name="name" placeholder="Uw naam *" required>
+                <input type="tel" name="phone" placeholder="Telefoonnummer *" required>
+                <select name="service">
+                    <option value="">Wat mogen wij reinigen?</option>
+                    <?php foreach (all_services() as $s): ?>
+                        <option value="<?= h($s['title']) ?>"><?= h($s['title']) ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit">📞 Bel mij terug met een prijs</button>
+            </form>
+        </div>
+    </div>
 </section>
 
 <section class="lane lane-prices-home">

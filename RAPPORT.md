@@ -325,3 +325,24 @@ cijfers in.
   (Imunify360) blokkeert tijdelijk IP's die zeer snel zeer veel pagina's opvragen —
   bij ~10.000 stadspagina's gebeurt dat snel. Oplossing: crawler langzamer laten
   lopen of het IP van de crawler door mijndomein laten whitelisten.
+
+## 13. UPDATE v10 — Klaar voor lancering
+
+- **/reinigen**: nu 4 voor/na-paren (bank, fauteuil, tapijt, matras).
+- **Home "Onze voorbeelden"**: 3 interactieve voor/na-sliders met bijschriften.
+- **Snel-offerteformulier op home** ("Gratis offerte in 30 seconden": naam + telefoon)
+  — lage drempel, leads komen binnen onder 📥 Leads met bron "snel-offerte".
+- **Instagram écht overal weg** (ook uit de sidebar "Volg ons" en structured data).
+- **Lege Facebook-plugin uit sidebar verwijderd** (snellere pagina's).
+- **Video laadt pas na klik** (preload none) — scheelt ~3,6 MB aan dataverkeer.
+- **Foto's gecomprimeerd** (~2 MB lichter) voor snellere laadtijd = hogere Ads-score.
+- **Testmodus-instelling** in Beheer → Instellingen: zolang op "Testfase" staat komt de
+  site niet in Google (belangrijk zolang de oude site nog live staat — anders dubbele
+  content). Bij lancering op het echte domein op "Live" zetten.
+
+### Lanceer-checklist (alles getest)
+- Alle publieke pagina's + admin: 0 fouten, 0 dode links/foto's.
+- Leads: snel-offerte, contactformulier én review-formulier werken end-to-end.
+- robots.txt/sitemap/canonical/og-tags/structured data: in orde.
+- Wachtwoord wijzigen bij lancering (Mijn account); na upload op echt domein:
+  testmodus op Live zetten.

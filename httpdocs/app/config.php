@@ -21,7 +21,7 @@ date_default_timezone_set('Europe/Amsterdam');
 mb_internal_encoding('UTF-8');
 
 // Versie voor cache-busting van css/js
-define('APP_VERSION', '3.5.0');
+define('APP_VERSION', '3.6.0');
 
 // Start sessie (voor admin-login en CSRF)
 if (session_status() === PHP_SESSION_NONE) {

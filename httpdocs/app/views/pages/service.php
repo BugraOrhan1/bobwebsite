@@ -66,7 +66,7 @@ $mediaBase = 'reinigen/' . $service['slug'];
                     <?php if (file_exists($videoFile)): ?>
                         <div class="cont-html"><?= ktext($page['content_video_description'] ?? '') ?></div>
                         <style>video{width:100%;height:auto;margin-top:16px;}</style>
-                        <video preload="preload" controls="controls" <?php if (file_exists($videoThumb)): ?>poster="/media/<?= h($mediaBase) ?>/<?= h($service['slug']) ?>-video.jpg"<?php endif; ?>>
+                        <video preload="none" controls="controls" <?php if (file_exists($videoThumb)): ?>poster="/media/<?= h($mediaBase) ?>/<?= h($service['slug']) ?>-video.jpg"<?php endif; ?>>
                             <source src="/media/<?= h($mediaBase) ?>/<?= h($service['slug']) ?>-video.mp4" type="video/mp4"/>
                         </video>
                     <?php endif; ?>

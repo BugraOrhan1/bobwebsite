@@ -39,8 +39,7 @@ $ratingCount = count($reviews);
   "addressCountry": "NL"
 },
 "sameAs": [
-    "<?= h(setting('facebook')) ?>",
-    "<?= h(setting('instagram')) ?>"
+    "<?= h(setting('facebook')) ?>"
 ],
 "aggregateRating": {
     "@type": "AggregateRating",

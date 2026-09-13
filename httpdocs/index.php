@@ -123,6 +123,33 @@ if ($segments[0] === 'reinigen' && isset($segments[1])) {
     }
 }
 
+// Snel-offerte: mini-formulier (naam + telefoon + dienst) = lage drempel, meer leads
+if ($path === 'snel-offerte' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+    if (!csrf_check()) redirect('/');
+    if (trim($_POST['website'] ?? '') !== '') redirect('/'); // honeypot
+    $name = trim($_POST['name'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    if ($name === '' || $phone === '') {
+        flash_set('Vul uw naam en telefoonnummer in, dan bellen wij u terug.', 'err');
+        redirect('/');
+    }
+    $service = trim($_POST['service'] ?? '');
+    db()->prepare('INSERT INTO leads (name, phone, email, city, message, source, gclid, page, ip) VALUES (?,?,?,?,?,?,?,?,?)')
+        ->execute([
+            $name,
+            $phone,
+            '',
+            '',
+            'Snel-offerte: terugbelverzoek voor ' . ($service ?: 'een reiniging') . '.',
+            'snel-offerte',
+            (string)($_COOKIE['rd_gclid'] ?? ''),
+            '/',
+            client_ip(),
+        ]);
+    flash_set('Bedankt ' . $name . '! Wij bellen u zo snel mogelijk terug met een scherpe prijs.', 'ok');
+    redirect('/?offerte=bedankt');
+}
+
 // Review insturen door klant (wordt pas zichtbaar na goedkeuring in beheer)
 if ($path === 'reviews' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     if (!csrf_check()) redirect('/reviews');

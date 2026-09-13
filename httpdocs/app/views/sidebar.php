@@ -30,14 +30,6 @@
 <h2 class="services_title">Volg ons</h2>
 
 <div class="locations">
-    <div id="fb-root"></div>
-    <div class="fb-page"
-         data-href="<?= h(setting('facebook')) ?>"
-         data-width="300"
-         data-adapt-container-width="true"
-         data-hide-cover="true"
-         data-lazy="true"
-         data-show-facepile="false"></div>
 </div>
 
 <div class="locations__volgons">
@@ -45,13 +37,6 @@
         <span class="locations__volgons__wrapper">
             <span class="locations__volgons__icon"></span>
             <span class="locations__volgons__text">Volg ons op Facebook</span>
-        </span>
-    </a>
-
-    <a href="<?= h(setting('instagram')) ?>" class="locations__volgons__button" role="button" target="_blank" rel="noopener" title="Volg ons via instagram <?= h(setting('site_title')) ?>">
-        <span class="locations__volgons__wrapper">
-            <span class="locations__volgons__icon-instagram"></span>
-            <span class="locations__volgons__text">Volg ons op Instagram</span>
         </span>
     </a>
 </div>

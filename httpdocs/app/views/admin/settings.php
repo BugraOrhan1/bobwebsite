@@ -37,6 +37,13 @@
             <option value="1" <?= ($settings['whatsapp_float'] ?? '1') === '1' ? 'selected' : '' ?>>Aan (aanbevolen)</option>
             <option value="0" <?= ($settings['whatsapp_float'] ?? '1') === '0' ? 'selected' : '' ?>>Uit</option>
         </select>
+
+        <label>Testmodus (zoekmachines)</label>
+        <select name="test_noindex">
+            <option value="1" <?= ($settings['test_noindex'] ?? '0') === '1' ? 'selected' : '' ?>>Testfase: site (nog) niet indexeren (aanbevolen voor test-domein)</option>
+            <option value="0" <?= ($settings['test_noindex'] ?? '0') === '0' ? 'selected' : '' ?>>Live: wél indexeren door Google</option>
+        </select>
+        <p class="admin-muted">Zet dit op "Live" zodra de site op het echte domein staat. Crawlers kunnen de site altijd bezoeken; met testmodus aan komt hij alleen niet in de zoekresultaten (zo blijft het echte domein de enige in Google).</p>
         <label>E-mailadres (contact + notificaties van leads)</label>
         <input type="email" name="notify_email" value="<?= h($settings['notify_email'] ?? '') ?>">
         <label>Afzender e-mail</label>
