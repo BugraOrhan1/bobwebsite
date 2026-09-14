@@ -1,16 +1,373 @@
 <?php
+/**
+ * De Reinigingsdokter — frontcontroller (Kirby-vrij).
+ * Alle pagina-routes lopen via dit bestand.
+ */
 
-define('DS', DIRECTORY_SEPARATOR);
+require __DIR__ . '/app/bootstrap.php';
+require APP_DIR . '/citycontent.php';
 
-// load kirby
-require(__DIR__ . DS . 'kirby' . DS . 'bootstrap.php');
+$path = request_path();
 
-// check for a custom site.php
-if(file_exists(__DIR__ . DS . 'site.php')) {
-  require(__DIR__ . DS . 'site.php');
-} else {
-  $kirby = kirby();
+// Normaliseer: trailing slash weghalen (behalve root)
+if ($path !== '' && substr($_SERVER['REQUEST_URI'] ?? '/', -1) === '/') {
+    redirect('/' . $path);
 }
 
-// render
-echo $kirby->launch();
+/* -------------------------------------------------------------- */
+/* Speciale routes                                                 */
+/* -------------------------------------------------------------- */
+
+if ($path === 'sitemap.xml') {
+    header('Content-Type: application/xml; charset=utf-8');
+    echo render_sitemap();
+    exit;
+}
+
+if ($path === 'robots.txt') {
+    header('Content-Type: text/plain; charset=utf-8');
+    echo "User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /data/\nDisallow: /app/\n\nSitemap: " . url('sitemap.xml') . "\n";
+    exit;
+}
+
+/* -------------------------------------------------------------- */
+/* Contactformulier (POST)                                         */
+/* -------------------------------------------------------------- */
+
+if ($path === 'contact' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+    handle_contact_post();
+}
+
+/* -------------------------------------------------------------- */
+/* Pagina-routes                                                   */
+/* -------------------------------------------------------------- */
+
+$segments = $path === '' ? [] : explode('/', $path);
+
+// Home
+if ($path === '') {
+    $page = page_by_slug('');
+    $ctx = make_ctx('home', ['page' => $page],
+        $page['meta_title'] ?? null, $page['meta_description'] ?? null,
+        url(''), 'body__home');
+    render_page($ctx);
+    exit;
+}
+
+// Diensten-overzicht
+if ($path === 'reinigen') {
+    $page = page_by_slug('reinigen');
+    $crumbs = [
+        ['title' => 'Home', 'url' => '/'],
+        ['title' => $page['title'], 'url' => '/reinigen'],
+    ];
+    $ctx = make_ctx('services', [
+        'page' => $page,
+        'servicesList' => all_services(),
+    ], $page['meta_title'] ?? null, $page['meta_description'] ?? null, url('reinigen'));
+    render_page($ctx);
+    exit;
+}
+
+// Dienst of stadspagina
+if ($segments[0] === 'reinigen' && isset($segments[1])) {
+    $service = service_by_slug($segments[1]);
+    if ($service) {
+        $page = service_page($service);
+        // Contextueel WhatsApp-bericht: dienst (+ eventueel stad)
+        $GLOBALS['WA_PREFILL'] = 'Hallo, ik wil graag ' . $service['title'] . ' aanvragen. Kunnen jullie mij een prijsindicatie geven?';
+
+        if (!isset($segments[2])) {
+            // Dienstpagina
+            $crumbs = [
+                ['title' => 'Home', 'url' => '/'],
+                ['title' => 'Reinigen', 'url' => '/reinigen'],
+                ['title' => $service['title'], 'url' => '/reinigen/' . $service['slug']],
+            ];
+            $metaTitle = $page['meta_title'] ?? ($service['title'] . ' | ' . setting('site_title'));
+            $ctx = make_ctx('service', [
+                'page' => $page,
+                'service' => $service,
+                'crumbs' => $crumbs,
+            ], $metaTitle, $page['meta_description'] ?? null, url('reinigen/' . $service['slug']));
+            $ctx['breadcrumb_schema'] = $crumbs;
+            render_page($ctx);
+            exit;
+        }
+
+        $city = city_by_slug($segments[2]);
+        if ($city && (int)$city['enabled'] === 1) {
+            $GLOBALS['WA_PREFILL'] = 'Hallo, ik wil graag ' . $service['title'] . ' in ' . $city['name'] . ' aanvragen. Kunnen jullie mij een prijsindicatie geven?';
+            // Stadspagina
+            $crumbs = [
+                ['title' => 'Home', 'url' => '/'],
+                ['title' => 'Reinigen', 'url' => '/reinigen'],
+                ['title' => $service['title'], 'url' => '/reinigen/' . $service['slug']],
+                ['title' => $city['name'], 'url' => '/reinigen/' . $service['slug'] . '/' . $city['slug']],
+            ];
+            $h1 = $service['title'] . ' in ' . $city['name'] . ' en omgeving';
+            $metaTitle = $h1 . ' | ' . setting('site_title');
+            $metaDesc = $service['title'] . ' in ' . $city['name'] . ' en omgeving. Reiniging op locatie, 100% milieuvriendelijk, reactie binnen 2 uur. ' . str_limit(setting('site_description'), 90);
+            $ctx = make_ctx('city', [
+                'page' => $page,
+                'service' => $service,
+                'city' => $city,
+                'crumbs' => $crumbs,
+                'introHtml' => city_intro_text($service, $city),
+                'nearby' => nearby_cities_links($service, $city, 10),
+            ], $metaTitle, $metaDesc, url('reinigen/' . $service['slug'] . '/' . $city['slug']));
+            $ctx['breadcrumb_schema'] = $crumbs;
+            render_page($ctx);
+            exit;
+        }
+    }
+}
+
+// Snel-offerte: mini-formulier (naam + telefoon + dienst) = lage drempel, meer leads
+if ($path === 'snel-offerte' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+    if (!csrf_check()) redirect('/');
+    if (trim($_POST['website'] ?? '') !== '') redirect('/'); // honeypot
+    $name = trim($_POST['name'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    if ($name === '' || $phone === '') {
+        flash_set('Vul uw naam en telefoonnummer in, dan bellen wij u terug.', 'err');
+        redirect('/');
+    }
+    $service = trim($_POST['service'] ?? '');
+    db()->prepare('INSERT INTO leads (name, phone, email, city, message, source, gclid, page, ip) VALUES (?,?,?,?,?,?,?,?,?)')
+        ->execute([
+            $name,
+            $phone,
+            '',
+            '',
+            'Snel-offerte: terugbelverzoek voor ' . ($service ?: 'een reiniging') . '.',
+            'snel-offerte',
+            (string)($_COOKIE['rd_gclid'] ?? ''),
+            '/',
+            client_ip(),
+        ]);
+    lead_notify_mail([
+        'name' => $name, 'phone' => $phone, 'email' => '', 'city' => '',
+        'source' => 'snel-offerte',
+        'message' => 'Snel-offerte: terugbelverzoek voor ' . ($service ?: 'een reiniging') . '.',
+        'gclid' => (string)($_COOKIE['rd_gclid'] ?? ''), 'attachment' => '',
+    ], 'Nieuwe snel-offerte (terugbelverzoek)');
+
+    flash_set('Bedankt ' . $name . '! Wij bellen u zo snel mogelijk terug met een scherpe prijs.', 'ok');
+    redirect('/?offerte=bedankt');
+}
+
+// Review insturen door klant (wordt pas zichtbaar na goedkeuring in beheer)
+if ($path === 'reviews' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+    if (!csrf_check()) redirect('/reviews');
+    if (trim($_POST['website'] ?? '') !== '') redirect('/reviews'); // honeypot
+    $name = trim($_POST['name'] ?? '');
+    $content = trim($_POST['content'] ?? '');
+    $rating = (int)($_POST['rating'] ?? 5);
+    if ($name === '' || $content === '') {
+        flash_set('Vul uw naam en een korte beoordeling in.', 'err');
+        redirect('/reviews');
+    }
+    if ($rating < 1 || $rating > 5) $rating = 5;
+    db()->prepare('INSERT INTO reviews (title, name, content, service, country, active, sort, pending) VALUES (?,?,?,?,?,0,99,1)')
+        ->execute([
+            trim($_POST['title'] ?? ''),
+            $name,
+            $content,
+            trim($_POST['service'] ?? ''),
+            'nl',
+        ]);
+    flash_set('Bedankt voor uw beoordeling! Na een korte controle publiceren wij deze op de site.', 'ok');
+    redirect('/reviews?bedankt=1');
+}
+
+// Vaste pagina's op slug
+$page = page_by_slug($path);
+if ($page) {
+    $crumbs = [
+        ['title' => 'Home', 'url' => '/'],
+        ['title' => $page['title'], 'url' => '/' . $page['slug']],
+    ];
+    $viewMap = [
+        'prices' => 'prices',
+        'reviews' => 'reviews',
+        'contact' => 'contact',
+        'thanks' => 'thanks',
+        'page' => 'page',
+        'legal' => 'legal',
+        'portfolio' => 'portfolio',
+    ];
+    $view = $viewMap[$page['template']] ?? 'page';
+    $bodyClass = $page['template'] === 'contact' ? 'body__contact'
+        : ($page['template'] === 'prices' || $page['template'] === 'reviews' ? 'body__page' : 'body__default');
+
+    $vars = ['page' => $page, 'crumbs' => $crumbs];
+    if ($view === 'contact') { $vars['errors'] = []; $vars['old'] = []; }
+
+    $ctx = make_ctx($view, $vars,
+        $page['meta_title'] ?? null, $page['meta_description'] ?? null,
+        url($page['slug']), $bodyClass);
+    $ctx['breadcrumb_schema'] = $crumbs;
+    render_page($ctx);
+    exit;
+}
+
+/* -------------------------------------------------------------- */
+/* 404                                                             */
+/* -------------------------------------------------------------- */
+
+http_response_code(404);
+$ctx = make_ctx('error', [],
+    'Pagina niet gevonden | ' . setting('site_title'),
+    'Deze pagina bestaat niet meer.', url($path), 'body__default');
+render_page($ctx);
+exit;
+
+/* ================================================================ */
+/* Functies                                                          */
+/* ================================================================ */
+
+function handle_contact_post(): void
+{
+    if (!csrf_check()) {
+        http_response_code(419);
+        exit('Sessie verlopen. Ga terug en probeer het opnieuw.');
+    }
+
+    $post = $_POST;
+    $errors = [];
+    $data = [
+        'fullName' => trim($post['fullName'] ?? ''),
+        'phone'    => trim($post['phone'] ?? ''),
+        'email'    => trim($post['email'] ?? ''),
+        'woonplaats' => trim($post['woonplaats'] ?? ''),
+        'message'  => trim($post['message'] ?? ''),
+        'lead'     => trim($post['lead'] ?? '--'),
+    ];
+
+    // Honeypot: bots vullen het verborgen veld in
+    if (!empty($post['website'])) {
+        redirect('/contact/bedankt');
+    }
+
+    if ($data['fullName'] === '') $errors['fullName'] = 'Vul alstublieft uw naam in.';
+    if ($data['email'] === '' || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = 'Vul alstublieft een geldig e-mailadres in.';
+    }
+    if ($data['message'] === '') $errors['message'] = 'Vul alstublieft een bericht in.';
+
+    if ($errors) {
+        $page = page_by_slug('contact');
+        $ctx = make_ctx('contact', [
+            'page' => $page,
+            'crumbs' => [['title' => 'Home', 'url' => '/'], ['title' => 'Contact', 'url' => '/contact']],
+            'errors' => $errors,
+            'old' => $data,
+        ], $page['meta_title'] ?? null, $page['meta_description'] ?? null, url('contact'), 'body__contact');
+        render_page($ctx);
+        exit;
+    }
+
+    // Bijlage verwerken
+    $attachment = '';
+    if (!empty($_FILES['filefield']['name']) && $_FILES['filefield']['error'] === UPLOAD_ERR_OK) {
+        $maxSize = 8 * 1024 * 1024;
+        if (filesize($_FILES['filefield']['tmp_name']) <= $maxSize) {
+            $ext = strtolower(pathinfo($_FILES['filefield']['name'], PATHINFO_EXTENSION));
+            $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'pdf', 'heic'];
+            if (in_array($ext, $allowed, true)) {
+                if (!is_dir(UPLOAD_DIR)) mkdir(UPLOAD_DIR, 0775, true);
+                $fname = date('Ymd-His') . '-' . bin2hex(random_bytes(4)) . '.' . $ext;
+                if (move_uploaded_file($_FILES['filefield']['tmp_name'], UPLOAD_DIR . '/' . $fname)) {
+                    $attachment = $fname;
+                }
+            }
+        }
+    }
+
+    // gclid (Google Ads) uit cookie of POST
+    $gclid = trim($post['gclid'] ?? '') ?: ($_COOKIE['rds_gclid'] ?? '');
+
+    $leadId = lead_add([
+        'name' => $data['fullName'],
+        'phone' => $data['phone'],
+        'email' => $data['email'],
+        'city' => $data['woonplaats'],
+        'message' => $data['message'],
+        'source' => $data['lead'],
+        'gclid' => $gclid,
+        'page' => $_SERVER['HTTP_REFERER'] ?? '',
+        'ip' => client_ip(),
+        'attachment' => $attachment,
+    ]);
+
+    // E-mail notificatie naar eigenaar
+    lead_notify_mail([
+        'name' => $data['fullName'], 'phone' => $data['phone'], 'email' => $data['email'],
+        'city' => $data['woonplaats'], 'source' => $data['lead'], 'message' => $data['message'],
+        'gclid' => $gclid, 'attachment' => $attachment,
+    ], 'Nieuwe lead via website');
+
+    // Bevestiging naar de klant
+    if ($data['email']) {
+        $subjectC = 'We hebben uw bericht ontvangen — ' . setting('site_title');
+        $bodyC = "Beste {$data['fullName']},\n\n"
+            . "Bedankt voor uw bericht! We hebben het ontvangen en nemen zo snel mogelijk contact met u op.\n\n"
+            . "Sneller antwoord nodig? Stuur ons een WhatsApp-bericht (met foto) via " . whatsapp_link() . "\n\n"
+            . "Met vriendelijke groet,\n" . setting('site_title') . "\n" . phone_display() . "\n";
+        rds_mail_send($data['email'], $subjectC, $bodyC);
+    }
+
+    redirect('/contact/bedankt');
+}
+
+/**
+ * E-mail notificatie naar de eigenaar bij elke nieuwe lead
+ * (contactformulier én snel-offerte). -f zorgt voor een nette
+ * afzender zodat de mail niet snel in spam belandt.
+ */
+function lead_notify_mail(array $d, string $subject): void
+{
+    $to = setting('notify_email');
+    if (!$to) return;
+    $body = "Er is een nieuwe aanvraag via de website.\n\n"
+        . "Naam: {$d['name']}\n"
+        . "Telefoon: " . ($d['phone'] ?: '-') . "\n"
+        . "E-mail: " . ($d['email'] ?: '-') . "\n"
+        . "Woonplaats: " . ($d['city'] ?: '-') . "\n"
+        . "Bron: {$d['source']}\n"
+        . "GCLID: " . ($d['gclid'] ?: '-') . "\n"
+        . "Bijlage: " . ($d['attachment'] ? '/data/uploads/' . $d['attachment'] : 'geen') . "\n\n"
+        . "Bericht:\n{$d['message']}\n";
+    list($ok, $err) = rds_mail_send($to, $subject . ': ' . $d['name'], $body, $d['email']);
+    if (!$ok) mail_log('lead-mail FOUT: ' . $err);
+}
+
+function render_sitemap(): string
+{
+    $urls = [];
+    $add = function (string $path, string $prio) use (&$urls) {
+        $urls[] = ['loc' => url($path), 'priority' => $prio];
+    };
+
+    $add('', '1.0');
+    foreach (menu_pages() as $p) $add($p['slug'], '0.8');
+    $add('portfolio', '0.5');
+
+    foreach (all_services() as $s) {
+        $add('reinigen/' . $s['slug'], '0.9');
+    }
+    foreach (all_services() as $s) {
+        foreach (all_cities() as $c) {
+            $add('reinigen/' . $s['slug'] . '/' . $c['slug'], '0.6');
+        }
+    }
+
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+        . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+    foreach ($urls as $u) {
+        $xml .= "<url><loc>" . htmlspecialchars($u['loc']) . "</loc><priority>{$u['priority']}</priority></url>\n";
+    }
+    $xml .= "</urlset>\n";
+    return $xml;
+}

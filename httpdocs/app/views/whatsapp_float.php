@@ -1,0 +1,24 @@
+<?php
+/**
+ * Zwevende WhatsApp-knop: blijft zichtbaar tijdens het scrollen.
+ * Uit te schakelen via Instellingen in het admin-paneel.
+ */
+if (setting('whatsapp_float', '1') !== '1') return;
+?>
+<a class="wa-float js-wa-click" href="<?= h(wa_context_link()) ?>" target="_blank" rel="noreferrer noopener"
+   aria-label="Stuur ons een WhatsApp-bericht">
+    <span class="wa-float__pulse" aria-hidden="true"></span>
+    <span class="wa-float__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.257.59 4.462 1.713 6.404L3.2 28.8l6.566-1.724a12.74 12.74 0 0 0 6.238 1.62h.005c7.058 0 12.793-5.74 12.793-12.8 0-3.42-1.33-6.633-3.748-9.052A12.72 12.72 0 0 0 16.004 3.2zm0 23.36h-.004a10.6 10.6 0 0 1-5.404-1.483l-.388-.23-3.897 1.023 1.04-3.799-.253-.39a10.58 10.58 0 0 1-1.627-5.681c0-5.868 4.775-10.64 10.645-10.64 2.842 0 5.513 1.108 7.522 3.117a10.58 10.58 0 0 1 3.113 7.527c0 5.87-4.775 10.64-10.646 10.64zm5.838-7.962c-.32-.16-1.893-.934-2.186-1.04-.293-.107-.506-.16-.72.16-.213.32-.826 1.04-1.013 1.253-.187.213-.373.24-.693.08-.32-.16-1.351-.498-2.574-1.588-.951-.848-1.593-1.896-1.78-2.216-.187-.32-.02-.493.14-.652.144-.144.32-.374.48-.561.16-.187.213-.32.32-.534.107-.213.054-.4-.026-.56-.08-.16-.72-1.736-.986-2.378-.26-.626-.523-.541-.72-.55l-.613-.011c-.213 0-.56.08-.853.4-.293.32-1.12 1.094-1.12 2.672 0 1.577 1.147 3.102 1.307 3.315.16.213 2.257 3.447 5.47 4.834.764.33 1.36.527 1.825.674.767.244 1.465.21 2.017.127.615-.092 1.893-.774 2.16-1.521.267-.747.267-1.387.187-1.521-.08-.133-.293-.213-.613-.373z"/>
+        </svg>
+    </span>
+    <span class="wa-float__label">WhatsApp ons</span>
+    <span class="wa-float__note" aria-hidden="true">
+        <em>Gratis offerte<br>aanvragen</em>
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 2 C14 10 14 20 20 32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M13 26 L20 35 L27 26" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </span>
+</a>

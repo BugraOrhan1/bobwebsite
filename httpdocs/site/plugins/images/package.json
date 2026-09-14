@@ -1,8 +1,0 @@
-{
-  "name": "images",
-  "description": "Images Field",
-  "author": "Thomas Günther <mail@medienbaecker.com>",
-  "version": "1.0.6",
-  "type": "kirby-plugin",
-  "license": "MIT"
-}
