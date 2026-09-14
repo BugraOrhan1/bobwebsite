@@ -406,3 +406,10 @@ Nog doen door eigenaar (checklist):
 3. Search Console: sitemap `sitemap.xml` indienen.
 4. Test-lead versturen → controleer inbox + spamfolder.
 5. Eventueel subdomein `test.` definitief verwijderen bij mijndomein.
+
+### 16.1 Status na livegang (14-09-2026, avond)
+- v3.7.0 live geüpload; SMTP actief (mail.mijndomein.nl:465, info@-account) — **lead-mails werken** (getest door eigenaar).
+- Tag Assistant: GA-tag G-7QV8FFJCF4 + Ads-tag AW-8102211098 gevonden; consent-mode correct (denied → granted na accept).
+- Formulierconversie getest en geregistreerd in Ads (doel "Leadformulier indienen").
+- WA-kliks worden waarschijnlijk meegemeld via automatisch doel "Contactmoment".
+- Open (optioneel): oude GA-Ads-koppeling AW-638672559 ontkoppelen; niet-relevante standaarddoelen uitsluiten indien slim bieden; sitemap indienen in Search Console; wachtwoorden roteren (admin/FTP/mail/Google).

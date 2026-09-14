@@ -1,0 +1,96 @@
+Title: Tapijtreiniging
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Tapijtreiniging
+
+----
+
+Intro-description: 
+
+Tapijtreiniging is uw tapijt binnen een dag weer schoon en fris. Vuil is altijd aanwezig: zichtbaar en onzichtbaar. Door uw tapijt grondig te reinigen, verwijderen hardnekkig vuil en bacteriën. Zo zullen vlekken en onaangename geurtjes in uw huis verdwijnen.
+
+Wij als professionels kan al deze bacteriën, vlekken en geurtjes weer uit uw meubels reinigen zodat deze er weer schoon is en fris ruikt!
+
+----
+
+Enable-contact: 1
+
+----
+
+Content-description: 
+
+##Voor en na foto’s van gereinigde tapijt
+Onderstaand vindt u een aantal voor en na foto’s van tapijt die wij hebben gereinigd.
+
+----
+
+Content-text-pre: Tapijt voor de tapijtreiniging
+
+----
+
+Content-img-pre: tapijtreiniging-voor-reiniging.jpg
+
+----
+
+Content-text-after: Tapijt voor de tapijtreiniging
+
+----
+
+Content-img-after: tapijtreiniging-na-reiniging.jpg
+
+----
+
+Content-intro-price: 
+
+### tapijt laten reinigen heeft zijn voordelen
+* Uw tapijt ziet er weer schoon en fris uit
+* Door intensieve reiniging voorkomt u dat vervuiling de kleur van uw bekleding aantast.
+* Wij reinigen al deze bacteriën, vlekken en geurtjes weer uit uw tapijt
+
+----
+
+Content-price: 
+
+##Prijzen tapijtreiniging
+Om u toch een indicatie van de kosten te geven, vindt u onderstaand een overzicht:
+
+----
+
+Content-showpriceid: 5
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Tapijtreiniging - Wij reinigen uw tapijt op locatie | Vanaf € 4.50 m2
+
+----
+
+Meta-description: Tapijtreiniging -  Wij reinigen uw tapijt op locatie ✔ Uw tapijt ziet er weer schoon en fris uit ✔Wij reinigen al deze bacteriën, vlekken en geurtjes weer uit uw tapijt
+
+----
+
+Content-video-description: 
+
+----
+
+Content-video-text: 
+
+----
+
+Content-video: 
+
+----
+
+Label: Tapijtreiniging
+
+----
+
+Icon: icon-reinigingszuiger.svg

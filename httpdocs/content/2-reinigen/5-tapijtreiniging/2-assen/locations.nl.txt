@@ -1,0 +1,17 @@
+Title: Assen
+
+----
+
+Enable-contact: 1
+
+----
+
+Intro-title: Assen
+
+----
+
+Meta-title: Assen
+
+----
+
+Meta-description: Assen

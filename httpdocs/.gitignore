@@ -1,5 +1,0 @@
-data/php-error.log
-data/site.sqlite-wal
-data/site.sqlite-shm
-data/uploads/*
-!data/uploads/.gitkeep

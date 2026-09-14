@@ -1,0 +1,25 @@
+Title: Muiden
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Muiden
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Muiden
+
+----
+
+Meta-description: Muiden

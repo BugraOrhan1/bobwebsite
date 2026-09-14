@@ -1,0 +1,25 @@
+Title: Baarn
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Baarn
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Baarn
+
+----
+
+Meta-description: Baarn

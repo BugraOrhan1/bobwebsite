@@ -1,0 +1,25 @@
+Title: Hardinxveld
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Hardinxveld
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Hardinxveld
+
+----
+
+Meta-description: Hardinxveld

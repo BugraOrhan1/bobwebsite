@@ -1,0 +1,17 @@
+Title: Middelburg
+
+----
+
+Enable-contact: 1
+
+----
+
+Intro-title: Middelburg
+
+----
+
+Meta-title: Middelburg
+
+----
+
+Meta-description: Middelburg 

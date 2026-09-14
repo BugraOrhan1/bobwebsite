@@ -1,0 +1,52 @@
+title: locations
+
+options:
+  template: true
+  status: true
+  preview: true
+  url: true
+  delete: true
+
+pages: false
+
+fields:
+  title:
+    label: Title home
+    type:  text
+    width: 2/5
+
+  enable_contact:
+    label: Wil je contact block aan zetten?
+    type:  checkbox
+    text: Wil je contact block aan zetten?
+    width: 3/5
+
+  hr-1:
+    label: Reinigingen
+    type: headline
+  intro_title:
+    label: Titel
+    type:  text
+    buttons: false
+    width: 3/5
+
+  meta:
+    label: Meta
+    type: headline
+  meta_title:
+    label: Meta Title
+    type:  text
+    validate:
+      min: 3
+      max: 80
+    help: Meta Title is the text showed in search engine results. Please enter a text between 50 and 60 characters.
+    width: 1/2
+  meta_description:
+    label: Meta description
+    type:  textarea
+    validate:
+      min: 3
+      max: 200
+    buttons: false
+    help: Meta description is the text showed in search engine results. Please enter a text between 155 and 160 chars.
+    width: 1/2

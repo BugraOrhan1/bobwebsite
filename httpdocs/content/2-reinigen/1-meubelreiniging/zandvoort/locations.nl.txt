@@ -1,0 +1,25 @@
+Title: Zandvoort
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Zandvoort
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Zandvoort
+
+----
+
+Meta-description: Zandvoort

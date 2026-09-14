@@ -1,0 +1,90 @@
+title: Diensten
+
+options:
+  template: true
+  status: true
+  preview: true
+  url: true
+  delete: true
+
+pages:
+  template: service
+
+fields:
+  title:
+    label: Title home
+    type:  text
+    width: 2/5
+  title_in_menu:
+    label: Hoofdmenu
+    type: checkbox
+    text: Tonen
+    width: 1/5
+
+  hr-1:
+    label: Reinigingen
+    type: headline
+  intro_title:
+    label: Titel
+    type:  text
+    buttons: false
+    width: 3/5
+  intro_description:
+    label: Volledig omschrijving
+    type:  textarea
+    width: 4/5
+
+  content_description:
+    label: Inleidende content gereinigde foto
+    type:  textarea
+    width: 5/5
+
+  enable_contact:
+    label: Wil je contact block aan zetten?
+    type:  checkbox
+    text: Wil je contact block aan zetten?
+    width: 4/5
+
+  content_examples:
+    label: Lijst met voorbeelden
+    type: structure
+    modalsize: large
+    style: table
+    fields:
+      content_text_pre:
+        label: pre text
+        type:  text
+        width: 2/5
+      content_img_pre:
+        label: Image voor
+        type:  image
+        width: 3/5
+      content_text_after:
+        label: after text
+        type:  text
+        width: 2/5
+      content_img_after:
+        label: Image na
+        type:  image
+        width: 3/5
+
+  meta:
+    label: Meta
+    type: headline
+  meta_title:
+    label: Meta Title
+    type:  text
+    validate:
+      min: 3
+      max: 80
+    help: Meta Title is the text showed in search engine results. Please enter a text between 50 and 60 characters.
+    width: 1/2
+  meta_description:
+    label: Meta description
+    type:  textarea
+    validate:
+      min: 3
+      max: 200
+    buttons: false
+    help: Meta description is the text showed in search engine results. Please enter a text between 155 and 160 chars.
+    width: 1/2

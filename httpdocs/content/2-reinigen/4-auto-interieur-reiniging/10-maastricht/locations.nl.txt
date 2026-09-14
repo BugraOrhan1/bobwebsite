@@ -1,0 +1,17 @@
+Title: Maastricht
+
+----
+
+Enable-contact: 1
+
+----
+
+Intro-title: Maastricht
+
+----
+
+Meta-title: Maastricht
+
+----
+
+Meta-description: Maastricht

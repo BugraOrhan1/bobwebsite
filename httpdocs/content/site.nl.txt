@@ -1,0 +1,97 @@
+Title: De Reinigingsdokter
+
+----
+
+Author: Feelance front-end developer | website bouwer rwesselink.nl
+
+----
+
+Description: De Reinigingsdokter zorgt voor schonen meubelreiniging zoals bankstellen, eetkamer stoelen, sofa's, autostoelen, matrassen en tapijt reiniging. De Reinigingsdokter zorgen voor een schoon gevoel dat is onze zorg!
+
+----
+
+Copyright: © 2009–(date: Year)
+
+----
+
+Review-title: Voortreffelijk
+
+----
+
+Review-sub: 43 beoordelingen
+
+----
+
+Review-nr: 9,6
+
+----
+
+Review-anchor: reviews
+
+----
+
+Sfeer-photos: de-reinigingsdokter-schoon-gevoel-web.jpg
+
+----
+
+Globel-close: Close
+
+----
+
+Globel-menu: Menu
+
+----
+
+Globel-reserve: Neem contact op
+
+----
+
+Globel-anchor: 
+
+----
+
+Footer-sitemap-title: Schoon gevoel
+
+----
+
+Footer-sitemap-desc: 
+
+De Reinigingsdokter doet reinigen van een eetkamerstoel tot grote bankcombinaties dit zorgt voor een schoon gevoel dat is onze zorg!
+© 2026 - (date: year)
+
+----
+
+Footer-contact-title: Contactgegevens
+
+----
+
+Footer-contact-desc: 
+
+De Reinigingsdokter
+W: (link: https://api.whatsapp.com/send?phone=310647249157&amp;text=Wat&nbsp;mogen&nbsp;we&nbsp;voor &nbsp;jou&nbsp;doen? text: Whatsapp ons)  
+B: 06-47249157
+E:Info@reinigingsdokter.nl
+
+----
+
+Name: De Reinigingsdokter
+
+----
+
+Photo: De-Reinigingsdokter-meubelreiniging-web.jpg
+
+----
+
+Version: 1.5
+
+----
+
+Meta-description: De Reinigingsdokter zorgt voor schonen meubelreiniging zoals bankstellen, eetkamer stoelen, sofa's, autostoelen, matrassen en tapijt reiniging. De Reinigingsdokter van het reinigen van een eenvoudige eetkamerstoel tot grote bankcombinaties in stof.
+
+----
+
+Meta-author: De Reinigingsdokter
+
+----
+
+Globel-slogan: We zorgen voor een schoon gevoel dat is onze zorg!

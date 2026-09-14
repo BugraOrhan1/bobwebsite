@@ -1,0 +1,748 @@
+Title: Reviews
+
+----
+
+Meta-title: Dit vinden onze klanten | matras reinigen aan huis | Vanaf € 29.00
+
+----
+
+Meta-description: Onze klanten vinden dit van ons qua Bankreiniging, stoelreiniging, matrasreiniging, auto interieurreiniging, tapijt reiniging, gevelreiniging Zonnepanelen reinigen en Kantoorpanden.
+
+----
+
+Hero: 
+
+----
+
+Hero-title: Reviews
+
+----
+
+Hero-size: 0
+
+----
+
+Hero-image: 
+
+----
+
+Hero-image-txt: 
+
+----
+
+Meta: 
+
+----
+
+Review-title: 
+
+----
+
+Review-list: 
+
+- 
+  s_title: >
+    Onze bank zat vol met eten en drink
+    vlekken.
+  s_name: Henriette
+  s_content: >
+    Er is ons eerlijk advies gegeven dat het
+    meeste eruit zal gaan maar ook iets
+    zichtbaar kan blijven. Van alle vlekken
+    zijn er nog maar 1 over gebleven! Heel
+    tevreden en zeker het geld waard.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: >
+    Met twee kleine kinderen is het niet te
+    doen om vlekken tegen te houden.
+  s_name: Ilona S te Rotterdam
+  s_content: >
+    Contact opgenomen en een prijs gekregen
+    veel goedkoper dan de concurrent en zeer
+    tevreden.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Kattenurine uit mijn bank
+  s_name: Angela Zwolle
+  s_content: >
+    Gisteren heeft onze kater geplast op het
+    bankstel meteen een afspraak gemaakt.
+    Zelfde avond nog onze bank gereinigd en
+    de geur is volledig weg!! ZEER TEVREDEN
+    AANRADER.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: >
+    Achteraf ook nog een bloemetje gekregen
+    voor het wachten.
+  s_name: Jannie te Breda
+  s_content: |
+    Twee keer gebeld helaas geen reactie gehad. Einde van de middag zijn we teruggebeld wegens drukte waren ze niet bereikbaar. Een afspraak gemaakt en was het wachten waard! Zeer blij met onze schone fauteuils.
+    
+    Achteraf ook nog een bloemetje gekregen voor het wachten.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Stoelreiniging en goede services
+  s_name: Jeanette – Almere
+  s_content: >
+    Bedankt voor de goede service en het
+    schoonmaken van onze stoel. Zelf hadden
+    we dit niet voor elkaar gekregen,
+    aanrader voor iedereen. Goede
+    prijs/kwaliteits verhouding :) Erg
+    bedankt. Groetjes
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Dagelijks worden onze objecten gereinigd
+  s_name: Marjan Rintel NS Amsterdam
+  s_content: >
+    Ons motto is elke dag een tevreden
+    reiziger schoon in de trein. Wij werken
+    inmiddels 2 jaar met uw organisatie en
+    zijn zeer tevreden over de kwaliteit die
+    word geleverd.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Super vriendelijk!!!
+  s_name: Sandy D.
+  s_content: |
+    Wij hebben onze meubels laten reinigen door dit bedrijf echt een aanrader! Ons bankstel en tapijt is gereinigd en weer superschoon!
+    
+    Tot volgend jaar ga zo door !
+  s_country: nl
+  s_sevice: Tapijtreiniging
+- 
+  s_title: Top service!!
+  s_name: Yannick
+  s_content: >
+    In de ochtend contact opgenomen in de
+    middag was mijn bank weer als nieuw.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Voor elke ondernemer aanrader.
+  s_name: Hakan S. Te Dordrecht
+  s_content: >
+    Wij zijn zeer tevreden over de
+    meubelreiniging van ons kantoorpand.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: De hond had op onze bank geplast
+  s_name: Jasmijn L
+  s_content: >
+    De hond had op onze bank geplast en het
+    stonk bizar. Wij hebben contact
+    opgenomen en de volgende dag is onze
+    bank gereinigd en de geur is helemaal
+    weg.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: My sofa is cleaned
+  s_name: Yakoubi M
+  s_content: >
+    My sofa is cleaned and im verry happy
+    with it! Have a good bussines.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Reageert ook vlot
+  s_name: Fahima te Utrecht
+  s_content: >
+    Twee tapijten gereinigd zeer tevreden en
+    reageert ook vlot.
+  s_country: nl
+  s_sevice: Tapijtreiniging
+- 
+  s_title: >
+    We zijn zeer tevreden over de
+    schoonmakers
+  s_name: Denny W. te Amsterdam
+  s_content: >
+    We zijn zeer tevreden over de
+    schoonmakers die naar ons kantoor zijn
+    gestuurd en bevelen uw bedrijf aan
+    iedereen die een professionele
+    schoonmaakservice zoekt aan. Bedankt
+    voor jullie hulp bij het schoonhouden
+    van ons kantoor.
+  s_country: nl
+  s_sevice: Kantoorpanden
+- 
+  s_title: Voelt weer fris aan
+  s_name: Michelle M.
+  s_content: >
+    Mijn man en ik zijn zeer tevreden
+    klanten. Ons huis ziet er prachtig uit
+    en de schoonmaker is altijd bereid om
+    aan speciale verzoeken te voldoen. Ik
+    ben blij dat ik een betrouwbaar
+    schoonmaakbedrijf heb gevonden.
+  s_country: nl
+  s_sevice: Kantoorpanden
+- 
+  s_title: De auto stonk erg naar hond...
+  s_name: Sven D
+  s_content: >
+    Wij hebben onze auto interieur laten
+    reinigen na aankoop van een tweedehands
+    auto. De auto stonk erg naar hond.. na
+    de reiniging de gehele geur was weg en
+    rook heerlijk fris!!
+  s_country: nl
+  s_sevice: Auto interieurreiniging
+- 
+  s_title: Reinigt al lange tijd onze auto’s
+  s_name: Serkan A
+  s_content: >
+    Zeer tevreden reinigt al lange tijd onze
+    auto’s die worden verkocht voor de
+    handel.
+  s_country: nl
+  s_sevice: Auto interieurreiniging
+- 
+  s_title: zeer proper gedaan
+  s_name: Jean Pierre te Antwerpen
+  s_content: >
+    Ons hele pand laten reinigen en de ramen
+    buiten zeer proper gedaan.
+  s_country: be
+  s_sevice: Kantoorpanden
+- 
+  s_title: Goedkoper dan nieuwe matrassen
+  s_name: Kelly H
+  s_content: >
+    Wij hebben ons bed laten reinigen
+    inclusief matrassen, kan niet anders
+    zeggen dan dat we blij zijn en goedkoper
+    dan nieuwe matrassen.
+  s_country: nl
+  s_sevice: Matrasreiniging
+- 
+  s_title: 2 maal onze trappen laten reinigen
+  s_name: Ulusoy te Dordrecht
+  s_content: >
+    2 maal onze trappen laten reinigen in
+    het voorjaar staat al een nieuwe
+    afspraak. Een aanrader voor iedereen!
+  s_country: nl
+  s_sevice: Tapijtreiniging
+- 
+  s_title: Vriendelijke jongeman reinigt
+  s_name: Poets anders te Papendrecht
+  s_content: >
+    Vriendelijke jongeman reinigt voor ons
+    ook autos op locatie en haalt en brengt
+    ze nog terug ook!
+  s_country: nl
+  s_sevice: Auto interieurreiniging
+- 
+  s_title: >
+    Via Facebook ben ik dit bedrijf
+    tegengekomen.
+  s_name: Bilal
+  s_content: >
+    Chocomelk op me autostoel laten vallen
+    via Facebook ben ik dit bedrijf
+    tegengekomen. De volgende dag om 9 uur
+    hebben ze alles eruit gezogen en is de
+    vlek weg gehaald.
+  s_country: nl
+  s_sevice: Auto interieurreiniging
+- 
+  s_title: Helemaal goed gegaan
+  s_name: Shirley Bakker te Maastricht
+  s_content: >
+    Ik wil je bedanken voor de geweldige
+    service en het resultaat van het
+    reinigen is helemaal goed. Ik weet zeker
+    dat ik in de toekomst gebruik zal maken
+    van jouw diensten.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: >
+    Bank is weer als nieuw en ruikt lekker
+    fris, hondenlucht verwijderd en
+    geïmpregneerd.
+  s_name: Jan Visser
+  s_content: >
+    Uitstekende service. Aanwezig op
+    afgesproken tijd. Bank is weer als nieuw
+    en ruikt lekker fris, hondenlucht
+    verwijderd en geïmpregneerd. Mensen doe
+    zaken met dit bedrijf top bedrijf!
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Netjes zijn schoenen uit
+  s_name: Ali M
+  s_content: >
+    Snelle reactie op mijn aanvraag, keurig
+    op de afgesproken dag en tijd aanwezig,
+    alles bij om ook de vloer af te dekken,
+    en netjes zijn schoenen uit doen wanneer
+    hij van buiten naar binnen kwam.
+  s_country: nl
+  s_sevice: Tapijtreiniging
+- 
+  s_title: >
+    Zeer aardige man en een professionele
+    manier van werken.
+  s_name: Petra van Wingerden
+  s_content: |
+    Ben zeer tevreden met het reinigen van onze hoekbank.
+    Mooi schoon en weer heerlijk fris na een verbouwing.
+    Zeer aardige man en een professionele manier van werken. Zeer zeker voor herhaling vatbaar.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: de bank weer helemaal opgeknapt
+  s_name: Julie Ann te Baarn
+  s_content: >
+    Eerst zelf een stoomreiniger gehuurd
+    maar eigenlijk meer verziekt dan schoner
+    geworden. Toch maar contact opgenomen en
+    nu is de bank weer helemaal opgeknapt!
+    Super bedankt en tot de volgende de keer
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: >
+    Zeer vriendelijke jongen en kennis van
+    zaken!
+  s_name: Tugba C
+  s_content: >
+    Zeer vriendelijke jongen en kennis van
+    zaken! Alles in details uitgelegd wat
+    hij ging doen en was nog zelfs 10
+    minuten eerder dan afgesproken. Top
+    bedrijf een aanrader
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: >
+    Op onze boerderij hebben ze 36
+    zonnepanelen gereinigd.
+  s_name: Saskia W
+  s_content: |
+    Op onze boerderij hebben ze 36 zonnepanelen gereinigd. Wij zijn dan ook heel tevreden over dit bedrijf. Eerlijke uitleg gegeven over als er vuil op zit dat het minder teruglevert.
+    Tot volgend seizoen.  Groetjes
+  s_country: nl
+  s_sevice: Zonnepanelen reinigen
+- 
+  s_title: ""
+  s_name: Tugba C. Maarssen
+  s_content: >
+    Kenneth heeft onze bank gereinigd
+    afgelopen dinsdag. Wij zijn dan ook zeer
+    tevreden over de kwaliteit en service!
+    Ik wens jullie dan ook fijne feestdagen
+    en tot volgend jaar.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: ""
+  s_name: Jean P Antwerpen
+  s_content: >
+    Mijn zetel laten schoonmaken en ik kan
+    niet anders zeggen dat hij zeer proper
+    is geworden!
+  s_country: be
+  s_sevice: Bankreiniging
+- 
+  s_title: Matrassen weer als nieuw
+  s_name: Menno Zwijndrecht
+  s_content: >
+    Twijfelend of we de matrassen zouden
+    laten reinigen of een nieuwe kopen.. uit
+    eindelijk gekozen om te reinigen, en ben
+    tevreden met het resultaat zo goed als
+    vlekvrij!!
+  s_country: nl
+  s_sevice: Matrasreiniging
+- 
+  s_title: Hond geplast op een nieuwe bank
+  s_name: Rikkie D. te Venlo
+  s_content: >
+    Onze pup had een ongeluk gehad op onze
+    nieuwe bank via onze kennis Fam Steur
+    aangeraden om contact op te nemen met
+    jullie. De urine geur is volledig
+    verwijderd en de bank ruikt weer
+    heerlijk zeer tevreden!
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Autostoelen weer schoon
+  s_name: Ali Rotterdam
+  s_content: >
+    Autostoelen van een mercedes C63 laten
+    reinigen volledig vlekvrij! bedankt voor
+    de service.
+  s_country: nl
+  s_sevice: Auto interieurreiniging
+- 
+  s_title: Bankstel en tapijt schoongemaakt
+  s_name: Farida A. Amsterdam Bijlmer
+  s_content: >
+    Tevreden en goedkoop! Aanrader voor
+    iedereen.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Eetkamer stoelen gereinigd
+  s_name: Melanie Zoetermeer
+  s_content: |
+    6 eetkamer stoelen laten reinigen vol met vlekken. Na het reinigen 1 vlek over gebleven, ben erg blij met het resultaat!
+    
+    Volgende maand is onze bank aan de beurt tot dan.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Honden geur helemaal weg
+  s_name: Berend te Rotterdam
+  s_content: >
+    Op korte termijn een afspraak gemaakt om
+    onze bank te reinigen. Wij zijn super
+    tevreden de urinegeur is helemaal
+    verdwenen!!
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Top service bank als nieuw
+  s_name: Fabio wonende in Zeist
+  s_content: >
+    Mijn tweedehands bank gereinigd ruikt
+    heerlijk fris en goedkoop! AANRADER
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: 2 Fauteuils laten reinigen
+  s_name: Willem Jan ‘T Gooi
+  s_content: |
+    Twee fauteuils laten schoonmaken door Kenneth. Zeer spontane jongeman met verstand van zaken en eerlijk advies.
+    Jullie hebben een vaste klant erbij!
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Onze overloop en trap gereinigd
+  s_name: Esther Beekjes Nijverdal
+  s_content: >
+    Vorige maand een afspraak gemaakt via
+    google om ons tapijt van 15 jaar oud
+    schoon te maken. Ziet er super uit en
+    kwam heel veel vuil uit klasse !
+  s_country: nl
+  s_sevice: Tapijtreiniging
+- 
+  s_title: Bankstel weer schoon
+  s_name: Floor van der Zanden Amsterdam
+  s_content: >
+    Wij laten jaarlijks ons bankstel
+    reinigen om alle vlekken en bacterien te
+    verwijderen. Afspraak voor volgend jaar
+    staat ook weer gepland.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Fauteuils en bankstel laten reinigen
+  s_name: Hendrik V te Ossendrecht
+  s_content: >
+    Twee fauteuils laten reinigen in
+    combinatie met de bank. Positieve
+    ervaring over de werkzaamheden, de
+    medewerker was keurig op tijd en nam de
+    tijd voor een ruime uitleg van de
+    behandeling.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Hond geplast in de nacht op de bank
+  s_name: Jos Vogel te Papendrecht
+  s_content: >
+    Mijn chihuahua had in de nacht geplast
+    op de bank en het stonk enorm.. Was echt
+    radeloos op aanraden van een collega
+    contact opgenomen en achteraf geen spijt
+    van. De geur is opgezogen en de vlek is
+    zo goed als weg! In mijn telefoon sta je
+    opgeslagen als de urine dokter :)
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Panden zeer schoon opgeleverd
+  s_name: MVGM wonen te Rotterdam
+  s_content: >
+    Diverse panden laten wij schoonmaken
+    voor de oplevering van onze kantoor en
+    woon panden.
+  s_country: nl
+  s_sevice: Kantoorpanden
+- 
+  s_title: Drink vlekken verwijderd uit bankstel
+  s_name: Jodi Den Haag
+  s_content: |
+    Afgelopen vrijdag mijn bankstel laten reinigen ben dan ook super tevreden over het resultaat! Alle drink vlekken zijn verwijderd en ook opnieuw een coating aangebracht tegen vuil.
+    
+    Kenneth succes met je team!
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Zetel reiniging weer zeer proper
+  s_name: Marie Ann te Antwerpen
+  s_content: 'De zetel laten wassen door dit bedrijf,  het contact gaat zeer makkelijk via de whatsapp en de afspraak staat snel gepland. EEN AANRADER!!'
+  s_country: be
+  s_sevice: Bankreiniging
+- 
+  s_title: Vlekken verwijderd op nieuw bankstel
+  s_name: Dzeila Rucphen
+  s_content: >
+    Today our sofa is cleaned, im very happy
+    with the result :)
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: >
+    Reinigen goedkoper dan een nieuw
+    bankstel
+  s_name: Manon te Breda
+  s_content: |
+    Ik ben eerlijk verbaasd over het eind resultaat van het reinigen. Voordat ik mijn afspraak maakte contact gezocht via whatsapp, de communicatie gaat vlot en er word snel gereageerd met een duidelijke uitleg door Kenneth.
+    
+    mijn bank is als nieuw en raad het iedereen zeer zeker aan!
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Tweedehands bankstel laten reinigen
+  s_name: Juliette Rotterdam
+  s_content: |
+    Wij hebben ons tweedehands bankstel
+    gereinigd en zijn super enthousiast over het resultaat! Volgend jaar staat de koffie weer klaar.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Rib bank laten reinigen
+  s_name: Sandra Kroonen
+  s_content: >
+    Super tevreden! Onze bank zag er na de
+    reiniging weer bijna als nieuw uit. Alle
+    vlekken zijn netjes verwijderd en de
+    bank ruikt ook weer fris. Zeker een
+    aanrader!
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Mijn bank weer clean
+  s_name: Dean
+  s_content: >
+    Wat een verschil! We hadden niet
+    verwacht dat onze bank nog zo mooi kon
+    worden. Heel netjes gewerkt en alles
+    werd duidelijk uitgelegd. Wij zijn erg
+    blij met het resultaat.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Hoekbank laten schoonmaken
+  s_name: Tamara Van Loon
+  s_content: >
+    Onze hoekbank laten reinigen en wat een
+    geweldige service. De afspraak was snel
+    gemaakt en de bank is ontzettend mooi
+    schoon geworden. Absoluut tevreden.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Meubels weer schoon
+  s_name: Mariëlle
+  s_content: >
+    Echt een aanrader. Onze bank had
+    behoorlijk wat vlekken door de kinderen
+    en dagelijks gebruik. Na de reiniging
+    ziet hij er weer fris en verzorgd uit.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Rib bank weer als nieuw
+  s_name: Tobias
+  s_content: >
+    Van een doffe, vieze bank naar een
+    frisse bank in één behandeling. Heel
+    blij met het resultaat en de
+    vriendelijke service. Wij zouden
+    Reinigingsdokter zeker opnieuw
+    inschakelen.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Bank met vlekken
+  s_name: Thirza uit Maastricht
+  s_content: >
+    Onze bank was na een aantal jaren echt
+    aan een schoonmaakbeurt toe. Het
+    resultaat heeft ons positief verrast. De
+    kleuren zijn weer mooi en de bank voelt
+    weer fris aan.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Top service!
+  s_name: Lysette
+  s_content: >
+    Zeer tevreden over de reiniging. Er werd
+    zorgvuldig gewerkt en er werd goed
+    gekeken naar de stof van onze bank. Het
+    eindresultaat is super!
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Bank en vloerkleed laten reinigen
+  s_name: Lesley K
+  s_content: >
+    Wat een verschil met ervoor! Vooral de
+    plekken waar veel op gezeten wordt waren
+    behoorlijk vies geworden. Na de
+    reiniging ziet onze bank er weer netjes
+    uit.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: >
+    Service van Jeroen verdiend een dikke
+    10!!
+  s_name: "Familie van 't Klooster"
+  s_content: >
+    Heel blij met de service! De bank was
+    behoorlijk vuil geworden door dagelijks
+    gebruik, maar na de behandeling was het
+    verschil direct zichtbaar. Zeker voor
+    herhaling vatbaar.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Weer als nieuw
+  s_name: Yasin
+  s_content: >
+    Mijn bank was behoorlijk vies geworden,
+    maar na de reiniging ziet hij er weer
+    ontzettend fris uit. Heel mooi
+    resultaat!
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Wat een verschil
+  s_name: Sophie
+  s_content: >
+    Echt een groot verschil. De bank ziet er
+    weer verzorgd uit en voelt ook veel
+    frisser aan. Superblij mee.
+  s_country: be
+  s_sevice: Meubelreiniging
+- 
+  s_title: Netjes gedaan
+  s_name: Amine
+  s_content: >
+    Zeer tevreden met de reiniging. Vooral
+    de vlekken zijn een stuk minder
+    zichtbaar geworden. Netjes werk!
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Prachtig resultaat
+  s_name: Elif
+  s_content: >
+    Wat een verschil met daarvoor! Mijn bank
+    ziet er weer bijna als nieuw uit. Zeker
+    de moeite waard geweest.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Helemaal opgefrist
+  s_name: Nadia
+  s_content: >
+    Heel blij met het eindresultaat. De bank
+    heeft een complete opfrisbeurt gekregen
+    en ziet er weer prachtig uit.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Boven verwachting
+  s_name: Daan
+  s_content: >
+    Mijn verwachtingen waren eerlijk gezegd
+    niet zo hoog, maar het resultaat heeft
+    me echt verrast. De bank is enorm
+    opgeknapt.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Grondig gereinigd
+  s_name: Yusuf
+  s_content: >
+    Goede en grondige reiniging. Mijn bank
+    ziet er weer schoon en fris uit.
+    Complimenten voor het werk.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Frisse uitstraling
+  s_name: Sara A
+  s_content: >
+    Vooral de lichte bekleding was
+    behoorlijk vuil geworden. Na de
+    reiniging ziet alles er weer netjes en
+    helder uit.
+  s_country: nl
+  s_sevice: Auto interieurreiniging
+- 
+  s_title: Zeker een aanrader
+  s_name: Mehmet Oz
+  s_content: >
+    Super tevreden! De bank ziet er weer
+    verzorgd uit en ruikt ook heerlijk fris.
+    Absoluut een aanrader.
+  s_country: nl
+  s_sevice: Meubelreiniging
+- 
+  s_title: Mooi eindresultaat
+  s_name: Lina El
+  s_content: >
+    Heel mooi resultaat. Je ziet echt dat de
+    bank professioneel is gereinigd. Ik ben
+    er erg blij mee.
+  s_country: nl
+  s_sevice: Bankreiniging
+- 
+  s_title: Een echte metamorfose
+  s_name: Esmee
+  s_content: >
+    Wat een metamorfose! Mijn woonkamer ziet
+    er meteen frisser uit nu de bank weer
+    helemaal schoon is.
+  s_country: nl
+  s_sevice: Bankreiniging
+
+----
+
+Title-in-menu: 1
+
+----
+
+Intro-title: Dit vinden onze klanten
+
+----
+
+Intro-desc: .....
+
+----
+
+Intro-description: De Reinigingsdokter doet reiniging op locatie door heel Nederland en Belgie.

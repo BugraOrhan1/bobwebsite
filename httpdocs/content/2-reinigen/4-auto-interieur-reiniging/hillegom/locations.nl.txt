@@ -1,0 +1,25 @@
+Title: Hillegom
+
+----
+
+Enable-contact: 0
+
+----
+
+Hr-1: 
+
+----
+
+Intro-title: Hillegom
+
+----
+
+Meta: 
+
+----
+
+Meta-title: Hillegom
+
+----
+
+Meta-description: Hillegom
