@@ -315,9 +315,7 @@ function handle_contact_post(): void
             . "Bedankt voor uw bericht! We hebben het ontvangen en nemen zo snel mogelijk contact met u op.\n\n"
             . "Sneller antwoord nodig? Stuur ons een WhatsApp-bericht (met foto) via " . whatsapp_link() . "\n\n"
             . "Met vriendelijke groet,\n" . setting('site_title') . "\n" . phone_display() . "\n";
-        $headersC = 'From: ' . setting('site_title') . ' <' . setting('contact_email') . ">\r\n"
-            . "Content-Type: text/plain; charset=UTF-8\r\n";
-        @mail($data['email'], $subjectC, $bodyC, $headersC);
+        rds_mail_send($data['email'], $subjectC, $bodyC);
     }
 
     redirect('/contact/bedankt');
@@ -341,10 +339,8 @@ function lead_notify_mail(array $d, string $subject): void
         . "GCLID: " . ($d['gclid'] ?: '-') . "\n"
         . "Bijlage: " . ($d['attachment'] ? '/data/uploads/' . $d['attachment'] : 'geen') . "\n\n"
         . "Bericht:\n{$d['message']}\n";
-    $headers = 'From: ' . setting('site_title') . ' <' . setting('contact_email') . ">\r\n"
-        . ($d['email'] ? 'Reply-To: ' . $d['email'] . "\r\n" : '')
-        . "Content-Type: text/plain; charset=UTF-8\r\n";
-    @mail($to, $subject . ': ' . $d['name'], $body, $headers, '-f' . setting('contact_email'));
+    list($ok, $err) = rds_mail_send($to, $subject . ': ' . $d['name'], $body, $d['email']);
+    if (!$ok) mail_log('lead-mail FOUT: ' . $err);
 }
 
 function render_sitemap(): string

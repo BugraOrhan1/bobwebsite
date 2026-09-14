@@ -49,6 +49,18 @@
         <label>Afzender e-mail</label>
         <input type="email" name="contact_email" value="<?= h($settings['contact_email'] ?? '') ?>">
         <p class="admin-muted">💡 Zorg dat dit e-mailadres bestaat bij je hostingprovider (mijndomein.nl), anders komen lead-mails niet aan.</p>
+        <label>SMTP-server (voor betrouwbare verzending)</label>
+        <input type="text" name="smtp_host" value="<?= h($settings['smtp_host'] ?? '') ?>" placeholder="mail.mijndomein.nl">
+        <label>SMTP-poort</label>
+        <input type="text" name="smtp_port" value="<?= h($settings['smtp_port'] ?? '587') ?>" placeholder="587">
+        <label>SMTP-gebruikersnaam (volledige e-mailadres)</label>
+        <input type="text" name="smtp_user" value="<?= h($settings['smtp_user'] ?? '') ?>" placeholder="info@reinigingsdokter.nl">
+        <label>SMTP-wachtwoord (leeg laten = ongewijzigd behouden)</label>
+        <input type="password" name="smtp_pass" value="" autocomplete="new-password">
+        <p class="admin-muted">💡 Gebruik de inloggegevens van uw mailaccount (bijv. info@reinigingsdokter.nl). Wachtwoord vergeten? Reset het bij mijndomein → E-mail → wachtwoord beheren. Standaard: server mail.mijndomein.nl, poort 587.</p>
+        <button class="btn btn--secondary" type="submit" name="send_testmail" value="1">📧 Verstuur testmail naar notificatie-adres</button>
+        <h3 style="margin-top:14px">Mail-log (diagnose)</h3>
+        <pre class="admin-muted" style="white-space:pre-wrap;background:#f4f7fb;padding:10px;border-radius:8px"><?= h(mail_log_tail(12)) ?></pre>
     </div>
 
     <div class="admin-panel">

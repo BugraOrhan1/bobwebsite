@@ -462,9 +462,23 @@ if ($route === '/instellingen') {
             'whatsapp_float','notify_email','contact_email','address_street','address_zip','address_city',
             'address_region','facebook','instagram','analytics_id','ads_id','ads_conversion_form',
             'ads_conversion_whatsapp','base_url','footer_sitemap_desc','footer_contact_title',
-            'footer_sitemap_title','review_badge_title','review_badge_sub','review_badge_nr','kvk_number'];
+            'footer_sitemap_title','review_badge_title','review_badge_sub','review_badge_nr','kvk_number',
+            'smtp_host','smtp_port','smtp_user','smtp_pass'];
+        if (trim((string)($_POST['smtp_pass'] ?? '')) === '') unset($_POST['smtp_pass']); // wachtwoord niet per ongeluk leegslaan
         foreach ($keys as $k) {
             if (array_key_exists($k, $_POST)) setting_save($k, trim((string)$_POST[$k]));
+        }
+        if (isset($_POST['send_testmail'])) {
+            $to = trim((string)setting('notify_email'));
+            if ($to === '') {
+                flash_set('Vul eerst het notificatie-e-mailadres in.', 'err');
+            } else {
+                $res = rds_mail_send($to, 'Testmail ' . setting('site_title'),
+                    "Dit is een testmail vanaf uw website.\n\nAls u dit leest, werkt het versturen van lead-mails.");
+                if ($res[0]) flash_set('Testmail verzonden naar ' . $to . ' — check ook de spamfolder.');
+                else flash_set('Verzenden mislukt: ' . $res[1] . ' (zie mail-log onderaan)', 'err');
+            }
+            redirect('/admin/instellingen');
         }
         flash_set('Instellingen opgeslagen.');
         redirect('/admin/instellingen');
