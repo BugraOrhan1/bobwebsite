@@ -9,6 +9,18 @@ require APP_DIR . '/citycontent.php';
 
 $path = request_path();
 
+// Dwing https + zonder www af voor het productiedomein (voorkomt dubbele inhoud)
+$host = $_SERVER['HTTP_HOST'] ?? '';
+if (substr($host, -strlen('reinigingsdokter.nl')) === 'reinigingsdokter.nl') {
+    $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+    if (strpos($host, 'www.') === 0 || !$https) {
+        $targetHost = (strpos($host, 'www.') === 0) ? substr($host, 4) : $host;
+        header('Location: https://' . $targetHost . ($_SERVER['REQUEST_URI'] ?? '/'), true, 301);
+        exit;
+    }
+}
+
 // Normaliseer: trailing slash weghalen (behalve root)
 if ($path !== '' && substr($_SERVER['REQUEST_URI'] ?? '/', -1) === '/') {
     redirect('/' . $path);
