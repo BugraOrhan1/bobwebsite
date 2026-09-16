@@ -23,7 +23,15 @@ function city_intro_text(array $service, array $city): string
         "<p>De Reinigingsdokter verzorgt {$svc} door heel Nederland — dus ook in {$plaats}. Met onze professionele apparatuur verwijderen wij hardnekkige vlekken, nare geurtjes en onzichtbaar vuil zoals huisstofmijt en bacteriën. Dat zorgt voor een schoon gevoel, en dat is onze zorg!</p><p>Wilt u weten wat {$svcLower} in {$plaats} kost? Vul het contactformulier in of app ons een foto: u ontvangt binnen 2 uur een reactie met een scherpe prijs.</p>",
     ];
 
-    return $teksten[$variant];
+    $nearby = nearby_cities_links($service, $city, 3);
+    $buurt = '';
+    if (count($nearby) > 0) {
+        $namen = array();
+        foreach ($nearby as $n) $namen[] = $n['name'];
+        $buurt = "<p>Wij zijn vanuit {$plaats} ook regelmatig actief in o.a. " . implode(', ', $namen) . ". Waar u ook woont: vraag gerust naar de mogelijkheden voor uw adres — wij plannen simpelweg een moment dat u thuis bent.</p>";
+    }
+
+    return $teksten[$variant] . $buurt;
 }
 
 /** Dichtstbijzijnde plaatsen in dezelfde provincie (voor interne links) */
