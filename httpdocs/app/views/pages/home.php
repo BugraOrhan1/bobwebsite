@@ -126,6 +126,7 @@
                     <?php endforeach; ?>
                 </select>
                 <button type="submit">📞 Bel mij terug met een prijs</button>
+                <p class="snel-offerte__trust">⭐ <?= h(setting('review_badge_nr', '9,6')) ?> uit <?= (int)preg_replace('/\D/', '', setting('review_badge_sub', '43')) ?> reviews · ⚡ Reactie binnen 2 uur · ✅ Gratis &amp; vrijblijvend</p>
             </form>
         </div>
     </div>
