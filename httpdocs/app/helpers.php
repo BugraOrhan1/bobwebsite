@@ -24,12 +24,31 @@ function base_url(): string
 {
     static $base = null;
     if ($base !== null) return $base;
-    $setting = setting('base_url');
-    if (!empty($setting)) { $base = rtrim($setting, '/'); return $base; }
+
+    $setting = trim((string)setting('base_url'));
+    if ($setting !== '') {
+        $base = rtrim($setting, '/');
+        return $base;
+    }
+
+    $host = strtolower(trim((string)($_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost')));
+    $host = preg_replace('/:\d+$/', '', $host);
+    $host = trim($host, '.');
+    if (str_starts_with($host, 'www.')) {
+        $host = substr($host, 4);
+    }
+
     $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-        || ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https';
+        || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https')
+        || (($_SERVER['REQUEST_SCHEME'] ?? '') === 'https')
+        || (($_SERVER['SERVER_PORT'] ?? '') === '443');
+
+    if (preg_match('/(^|\.)reinigingsdokter\.nl$/', $host) === 1) {
+        $host = 'reinigingsdokter.nl';
+        $https = true;
+    }
+
     $scheme = $https ? 'https' : 'http';
-    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
     $base = $scheme . '://' . $host;
     return $base;
 }
@@ -37,7 +56,7 @@ function base_url(): string
 /** Absolute URL voor een pad */
 function url(string $path = ''): string
 {
-    if ($path === '' ) return base_url() . '/';
+    if ($path === '') return base_url() . '/';
     return base_url() . '/' . ltrim($path, '/');
 }
 
@@ -203,6 +222,26 @@ function redirect(string $to): void
 {
     header('Location: ' . $to, true, 302);
     exit;
+}
+
+/** Veilige standaard headers voor de public-facing site */
+function apply_security_headers(): void
+{
+    if (headers_sent()) return;
+
+    $host = strtolower($_SERVER['HTTP_HOST'] ?? '');
+    $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+
+    if ($https && !str_contains($host, 'localhost') && !str_contains($host, '127.0.0.1')) {
+        header('Strict-Transport-Security: max-age=31536000; includeSubDomains', true);
+    }
+
+    header('X-Content-Type-Options: nosniff', true);
+    header('X-Frame-Options: SAMEORIGIN', true);
+    header('Referrer-Policy: strict-origin-when-cross-origin', true);
+    header('Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()', true);
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.gstatic.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.google.com https://www.googletagmanager.com; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https:; upgrade-insecure-requests", true);
 }
 
 /** Beperkte tekst */
