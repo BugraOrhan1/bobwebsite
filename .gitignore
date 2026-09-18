@@ -8,3 +8,4 @@ node_modules/
 /output/
 /codex-seo/.seo-cache/
 /codex-seo/output/
+package.json
