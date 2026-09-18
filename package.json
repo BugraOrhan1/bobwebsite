@@ -1,0 +1,11 @@
+{
+  "name": "reinigingsdokter-website",
+  "private": true,
+  "scripts": {
+    "dev": "php -d display_errors=1 -d display_startup_errors=1 -d error_reporting=E_ALL -S localhost:3000 -t httpdocs httpdocs/router-dev.php",
+    "seo:install": "powershell -ExecutionPolicy Bypass -File ./codex-seo/install.ps1",
+    "seo:audit": "powershell -ExecutionPolicy Bypass -File ./scripts/seo-audit.ps1 -Target https://reinigingsdokter.nl",
+    "seo:technical": "powershell -ExecutionPolicy Bypass -File ./scripts/seo-audit.ps1 -Skill seo-technical -Target https://reinigingsdokter.nl",
+    "seo:local": "powershell -ExecutionPolicy Bypass -File ./scripts/seo-audit.ps1 -Skill seo-technical -Target http://localhost:3000"
+  }
+}
