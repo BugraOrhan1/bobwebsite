@@ -7,8 +7,6 @@
 require __DIR__ . '/app/bootstrap.php';
 require APP_DIR . '/citycontent.php';
 
-apply_security_headers();
-
 $path = request_path();
 
 // Dwing https + zonder www af voor het productiedomein (voorkomt dubbele inhoud)
@@ -360,44 +358,27 @@ function lead_notify_mail(array $d, string $subject): void
 function render_sitemap(): string
 {
     $urls = [];
-    $seen = [];
-    $add = function (string $path) use (&$urls, &$seen) {
-        $loc = url($path);
-        if ($loc === '') {
-            $loc = base_url() . '/';
-        }
-
-        $loc = rtrim($loc, '/');
-        if ($loc === '') {
-            $loc = base_url();
-        }
-
-        $key = strtolower($loc);
-        if (isset($seen[$key])) {
-            return;
-        }
-
-        $seen[$key] = true;
-        $urls[] = ['loc' => $loc];
+    $add = function (string $path, string $prio) use (&$urls) {
+        $urls[] = ['loc' => url($path), 'priority' => $prio];
     };
 
-    $add('');
-    foreach (menu_pages() as $p) $add($p['slug']);
-    $add('portfolio');
+    $add('', '1.0');
+    foreach (menu_pages() as $p) $add($p['slug'], '0.8');
+    $add('portfolio', '0.5');
 
     foreach (all_services() as $s) {
-        $add('reinigen/' . $s['slug']);
+        $add('reinigen/' . $s['slug'], '0.9');
     }
     foreach (all_services() as $s) {
         foreach (all_cities() as $c) {
-            $add('reinigen/' . $s['slug'] . '/' . $c['slug']);
+            $add('reinigen/' . $s['slug'] . '/' . $c['slug'], '0.6');
         }
     }
 
     $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
         . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
     foreach ($urls as $u) {
-        $xml .= '<url><loc>' . htmlspecialchars($u['loc'], ENT_XML1, 'UTF-8') . '</loc></url>' . "\n";
+        $xml .= "<url><loc>" . htmlspecialchars($u['loc']) . "</loc><priority>{$u['priority']}</priority></url>\n";
     }
     $xml .= "</urlset>\n";
     return $xml;

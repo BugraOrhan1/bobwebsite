@@ -14,6 +14,8 @@
         <textarea name="site_description" rows="3"><?= h($settings['site_description'] ?? '') ?></textarea>
         <label>Slogan</label>
         <input type="text" name="slogan" value="<?= h($settings['slogan'] ?? '') ?>">
+        <label>Promotiebalk bovenaan de site (leeg = verborgen)</label>
+        <input type="text" name="promo_text" value="<?= h($settings['promo_text'] ?? '') ?>" placeholder="bijv. Herfstactie: gratis impregneren bij elke bankreiniging t/m 31 okt">
         <label>Adres</label>
         <input type="text" name="address_street" value="<?= h($settings['address_street'] ?? '') ?>">
         <label>KvK-nummer <small>(verplicht te vermelden op een zakelijke website; verschijnt in de footer + privacyverklaring)</small></label>

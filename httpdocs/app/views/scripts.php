@@ -77,6 +77,7 @@ $ratingCount = count($reviews);
         {
         "@type": "ListItem",
         "position": <?= $i + 1 ?>,
+        "name": "<?= h($crumb['title']) ?>",
         "item": "<?= h($crumb['url']) ?>"
         }<?= $i < count($bc) - 1 ? ',' : '' ?>
         <?php endforeach; ?>

@@ -655,6 +655,8 @@ footer a { color: #c3e9f3; }
 .snel-offerte__form button:hover { transform: translateY(-2px); }
 .snel-offerte__trust { color: rgba(255,255,255,.95); font-size: 13px; margin: 2px 0 0; text-align: center; letter-spacing: .2px; }
 .form-trust { color: #55607a; font-size: 13px; margin: 10px 0 0; text-align: center; }
+.promo-bar { background: #F5C457; color: #002970; text-align: center; padding: 9px 14px; font-weight: 700; font-size: 14px; line-height: 1.4; }
+.promo-bar a { color: #002970; text-decoration: underline; }
 @media (max-width: 860px) {
     .snel-offerte__box { grid-template-columns: 1fr; padding: 26px 20px; }
 }

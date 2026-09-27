@@ -3,6 +3,9 @@
 <html lang="nl">
 <?php view('head', ['ctx' => $ctx]); ?>
 <body class="<?= h($ctx['bodyClass']) ?>">
+<?php $promo = trim((string)setting('promo_text')); if ($promo !== ''): ?>
+<div class="promo-bar">📣 <?= h($promo) ?> · <a href="/contact">vraag direct een prijs</a></div>
+<?php endif; ?>
 <div class="all">
 <?php view('header'); ?>
 

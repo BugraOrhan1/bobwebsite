@@ -458,7 +458,7 @@ if ($route === '/faq/edit') {
 
 if ($route === '/instellingen') {
     if ($method === 'POST' && csrf_check()) {
-        $keys = ['site_title','site_description','slogan','phone_display','whatsapp_number','whatsapp_message',
+        $keys = ['site_title','site_description','slogan','promo_text','phone_display','whatsapp_number','whatsapp_message',
             'whatsapp_float','notify_email','contact_email','address_street','address_zip','address_city',
             'address_region','facebook','instagram','analytics_id','ads_id','ads_conversion_form',
             'ads_conversion_whatsapp','base_url','footer_sitemap_desc','footer_contact_title',
